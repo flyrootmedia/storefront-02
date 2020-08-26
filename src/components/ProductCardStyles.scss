@@ -1,0 +1,46 @@
+@import '../sass/shared/variables';
+
+.product-card-styles {
+    $thumb-width: 30px;
+
+    &_thumbs {
+        display: grid;
+        grid-template-columns: $thumb-width $thumb-width $thumb-width $thumb-width $thumb-width $thumb-width;
+        grid-column-gap: 5px;
+        margin: 0;
+        text-align: center;
+        height: $thumb-width;
+        overflow: hidden;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+
+        a {
+            display: inline-block;
+            width: $thumb-width;
+            height: $thumb-width;
+            line-height: $thumb-width;
+            text-decoration: none;
+            font-size: $font-size-12;
+            overflow: hidden;
+            box-sizing: border-box;
+            border: 1px solid $color-gray-three;
+
+            &:hover,
+            &.selected {
+                border-color: $color-brand-main;
+            }
+
+            a {
+                display: block;
+                float: left;
+                width: 100%;
+                height: 100%;
+                color: $color-gray-three;
+            }
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+}

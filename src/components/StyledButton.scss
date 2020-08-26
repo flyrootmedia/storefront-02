@@ -1,0 +1,22 @@
+@import '../sass/shared/mixins';
+
+.styled-button {
+    @include button-state-default('primary');
+    transition: color 0.25s ease-out, border 0.25s ease-out;
+    margin: 0 5px;
+    width: 44px;
+    height: 44px;
+    box-sizing: border-box;
+
+    &:hover {
+        @include button-state-hover('primary');
+    }
+
+    &:focus {
+        @include button-state-focused('primary');
+    }
+
+    &[disabled] {
+        @include button-state-disabled;
+    }
+}

@@ -1,8 +1,14 @@
+import './Breadcrumbs.scss';
+
 import React from 'react';
 
 const Breadcrumbs = () => {
     return (
-        <div>Breadcrumbs</div>
+        <ul className="breadcrumbs small-screen-padding">
+            <li><a href="/">Home</a></li>
+            <li><a href="/plp.frm.html">Helmets</a></li>
+            <li className="active">Full Face Helmets</li>
+        </ul>
     );
 }
 

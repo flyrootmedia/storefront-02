@@ -1,0 +1,670 @@
+{
+    "products": [
+        {
+            "productURL": "/",
+            "defaultSkuURL": "/",
+            "sticker": {
+                "cssClass": "",
+                "stickerText": "Long Sticker Text to Demonstrate Ellipsis!"
+            },
+            "name": "Arai Corsair X Helmet - RC",
+            "image": {
+                "url": "/images/products/arai-corsair-x-rc_480x480.jpg",
+                "altText": "Arai Corsair X - RC"
+            },
+            "styles": [],
+            "ratings": {
+                "rating": 10,
+                "count": 97
+            },
+            "price": {
+                "salePrice": "$899.99",
+                "wasPrice": ""
+            }
+        },
+        {
+            "productURL": "/",
+            "defaultSkuURL": "/",
+            "sticker": {
+                "cssClass": "",
+                "stickerText": ""
+            },
+            "name": "Arai Regent X Helmet - Bend Red",
+            "image": {
+                "url": "/images/products/arai-regent-x-bend-red_480x480.jpg",
+                "altText": "Arai Regent X - Bend Red"
+            },
+            "styles": [],
+            "ratings": {
+                "rating": 8,
+                "count": 11
+            },
+            "price": {
+                "salePrice": "$559.95",
+                "wasPrice": ""
+            }
+        },
+        {
+            "productURL": "/",
+            "defaultSkuURL": "/",
+            "sticker": {
+                "cssClass": "",
+                "stickerText": "Staff Favorite! <i class=\"fas fa-thumbs-up\"></i>"
+            },
+            "name": "Bell Eliminator Helmet - Rally - Matte/Gloss Black/Orange",
+            "image": {
+                "url": "/images/products/bell-eliminator-rally-orange_480x480.jpg",
+                "altText": "Bell Eliminator - Rally Orange"
+            },
+            "styles": [
+                {
+                    "selected": true,
+                    "linkURL": "/",
+                    "imageURL": "/images/products/bell-eliminator-rally-orange_80x80.jpg",
+                    "altText": "Bell Eliminator - Rally Orange - Thumbnail"
+                },
+                {
+                    "selected": false,
+                    "linkURL": "/",
+                    "imageURL": "/images/products/bell-eliminator-gloss-black_80x80.jpg",
+                    "altText": "Bell Eliminator - Gloss Black - Thumbnail"
+                },
+                {
+                    "selected": false,
+                    "linkURL": "/",
+                    "imageURL": "/images/products/bell-eliminator-gloss-white_80x80.jpg",
+                    "altText": "Bell Eliminator - Gloss White - Thumbnail"
+                }
+            ],
+            "ratings": {
+                "rating": 10,
+                "count": 103
+            },
+            "price": {
+                "salePrice": "$419.95",
+                "wasPrice": ""
+            }
+        },
+        {
+            "productURL": "/",
+            "defaultSkuURL": "/",
+            "sticker": {
+                "cssClass": "",
+                "stickerText": "New!"
+            },
+            "name": "Biltwell Gringo S ECE Helmet",
+            "image": {
+                "url": "/images/products/biltwell-gringo-s-gloss-black_480x480.jpg",
+                "altText": "biltwell-gringo S ECE Helmet - Gloss Black"
+            },
+            "styles": [
+                {
+                    "selected": true,
+                    "linkURL": "/",
+                    "imageURL": "/images/products/biltwell-gringo-s-gloss-black_80x80.jpg",
+                    "altText": "biltwell-gringo S ECE Helmet - Gloss Black - Thumbnail"
+                },
+                {
+                    "selected": false,
+                    "linkURL": "/",
+                    "imageURL": "/images/products/biltwell-gringo-s-gloss-vintage-white_80x80.jpg",
+                    "altText": "biltwell-gringo S ECE Helmet - Vintage White - Thumbnail"
+                },
+                {
+                    "selected": false,
+                    "linkURL": "/",
+                    "imageURL": "/images/products/biltwell-gringo-s-matte-black_80x80.jpg",
+                    "altText": "biltwell-gringo S ECE Helmet - Matte Black - Thumbnail"
+                },
+                {
+                    "selected": false,
+                    "linkURL": "/",
+                    "imageURL": "/images/products/biltwell-gringo-s-metallic-candy-red_80x80.jpg",
+                    "altText": "biltwell-gringo S ECE Helmet - Metallic Candy Red - Thumbnail"
+                },
+                {
+                    "selected": false,
+                    "linkURL": "/",
+                    "imageURL": "/images/products/biltwell-gringo-s-metallic-yukon-gold_80x80.jpg",
+                    "altText": "biltwell-gringo S ECE Helmet - Metallic Yukon Gold - Thumbnail"
+                }
+            ],
+            "ratings": {
+                "rating": 10,
+                "count": 21
+            },
+            "price": {
+                "salePrice": "$219.95 - $229.95",
+                "wasPrice": ""
+            }
+        },
+        {
+            "productURL": "/",
+            "defaultSkuURL": "/",
+            "sticker": {
+                "cssClass": "-sale",
+                "stickerText": "On Sale Now!"
+            },
+            "name": "Biltwell Gringo S ECE Helmet - Metallic Candy Red",
+            "image": {
+                "url": "/images/products/biltwell-gringo-s-metallic-candy-red_480x480.jpg",
+                "altText": "biltwell gringo S ECE Helmet - Candy Red"
+            },
+            "styles": [],
+            "ratings": {
+                "rating": 9,
+                "count": 27
+            },
+            "price": {
+                "salePrice": "$189.95",
+                "wasPrice": "$219.95"
+            }
+        },
+        {
+            "productURL": "/",
+            "defaultSkuURL": "/",
+            "sticker": {
+                "cssClass": "",
+                "stickerText": "Closeout!"
+            },
+            "name": "Biltwell Gringo S ECE Helmet - Metallic Yukon Gold",
+            "image": {
+                "url": "/images/products/biltwell-gringo-s-metallic-yukon-gold_480x480.jpg",
+                "altText": "biltwell-gringo S ECE Helmet - Metallic Yukon Gold"
+            },
+            "styles": [],
+            "ratings": {
+                "rating": 7,
+                "count": 53
+            },
+            "price": {
+                "salePrice": "$199.95",
+                "wasPrice": "$219.95"
+            }
+        },
+        {
+            "productURL": "/",
+            "defaultSkuURL": "/",
+            "sticker": {
+                "cssClass": "",
+                "stickerText": ""
+            },
+            "name": "Biltwell Lanesplitter Helmet",
+            "image": {
+                "url": "/images/products/biltwell-lanesplitter-rusty-butcher_480x480.jpg",
+                "altText": "biltwell Lanesplitter Helmet - Rusty Butcher"
+            },
+            "styles": [
+                {
+                    "selected": true,
+                    "linkURL": "/",
+                    "imageURL": "/images/products/biltwell-lanesplitter-rusty-butcher_80x80.jpg",
+                    "altText": "biltwell Lanesplitter Helmet - Rusty Butcher - Thumbnail"
+                },
+                {
+                    "selected": false,
+                    "linkURL": "/",
+                    "imageURL": "/images/products/biltwell-lanesplitter-gloss-black_80x80.jpg",
+                    "altText": "biltwell Lanesplitter Helmet - Gloss Black - Thumbnail"
+                },
+                {
+                    "selected": false,
+                    "linkURL": "/",
+                    "imageURL": "/images/products/biltwell-lanesplitter-gloss-black-gold_80x80.jpg",
+                    "altText": "biltwell Lanesplitter Helmet - Gloss Black Gold - Thumbnail"
+                }
+            ],
+            "ratings": {
+                "rating": 8,
+                "count": 111
+            },
+            "price": {
+                "salePrice": "$249.95 - $274.95",
+                "wasPrice": ""
+            }
+        },
+        {
+            "productURL": "/",
+            "defaultSkuURL": "/",
+            "sticker": {
+                "cssClass": "-out-of-stock",
+                "stickerText": "Out of Stock <i class=\"fas fa-sad-tear\"></i>"
+            },
+            "name": "Nexx G100 Giant Slayer Helmet - Carbon Gold",
+            "image": {
+                "url": "/images/products/nexx-g100-giant-slayer-carbon-gold_480x480.jpg",
+                "altText": "Nexx G100 Helmet - Giant Slayer - Carbon Gold"
+            },
+            "styles": [],
+            "ratings": {
+                "rating": 6,
+                "count": 273
+            },
+            "price": {
+                "salePrice": "$279.96",
+                "wasPrice": ""
+            }
+        },
+        {
+            "productURL": "/",
+            "defaultSkuURL": "/",
+            "sticker": {
+                "cssClass": "",
+                "stickerText": "New Arrival!"
+            },
+            "name": "Nexx G200 Helmet - Desert Race Yellow",
+            "image": {
+                "url": "/images/products/nexx-g200-desert-race-yellow_480x480.jpg",
+                "altText": "Nexx G200 Helmet - Desert Race Yellow"
+            },
+            "styles": [],
+            "ratings": {
+                "rating": 0,
+                "count": 0
+            },
+            "price": {
+                "salePrice": "$349.95",
+                "wasPrice": ""
+            }
+        },
+        {
+            "productURL": "/",
+            "defaultSkuURL": "/",
+            "sticker": {
+                "cssClass": "",
+                "stickerText": ""
+            },
+            "name": "Ruby Full Face Helmet - Gold",
+            "image": {
+                "url": "/images/products/ruby-gold_480x480.jpg",
+                "altText": "Ruby - Gold"
+            },
+            "styles": [],
+            "ratings": {
+                "rating": 10,
+                "count": 10
+            },
+            "price": {
+                "salePrice": "$1,399.00",
+                "wasPrice": ""
+            }
+        },
+        {
+            "productURL": "/",
+            "defaultSkuURL": "/",
+            "sticker": {
+                "cssClass": "-sale",
+                "stickerText": "On Sale!"
+            },
+            "name": "Shark Spartan 1.2 Kobrak Helmet",
+            "image": {
+                "url": "/images/products/shark-spartan-kobrak_480x480.jpg",
+                "altText": "Shark Spartan 1.2 Kobrak Helmet"
+            },
+            "styles": [],
+            "ratings": {
+                "rating": 8,
+                "count": 87
+            },
+            "price": {
+                "salePrice": "$399.99",
+                "wasPrice": "$429.99"
+            }
+        },
+        {
+            "productURL": "/",
+            "defaultSkuURL": "/",
+            "sticker": {
+                "cssClass": "",
+                "stickerText": ""
+            },
+            "name": "Shoe GT2Air II Helmet - Brilliant Yellow",
+            "image": {
+                "url": "/images/products/shoei-gt-air2-brilliantyellow_480x480.jpg",
+                "altText": "Shoe GT-Air 2 Helmet - Brilliant Yellow"
+            },
+            "styles": [],
+            "ratings": {
+                "rating": 5,
+                "count": 99
+            },
+            "price": {
+                "salePrice": "$599.99",
+                "wasPrice": ""
+            }
+        },
+        {
+            "productURL": "/",
+            "defaultSkuURL": "/",
+            "sticker": {
+                "cssClass": "",
+                "stickerText": "Staff Favorite! <i class=\"fas fa-thumbs-up\"></i>"
+            },
+            "name": "Shoei RF-1200 Philosopher Helmet - Black/Red",
+            "image": {
+                "url": "/images/products/shoei-rf-1200-philosopher-black-red_480x480.jpg",
+                "altText": "Shoei RF-1200 Philosopher Helmet - Black/Red"
+            },
+            "styles": [],
+            "ratings": {
+                "rating": 10,
+                "count": 1242
+            },
+            "price": {
+                "salePrice": "$589.99",
+                "wasPrice": ""
+            }
+        },
+        {
+            "productURL": "/",
+            "defaultSkuURL": "/",
+            "sticker": {
+                "cssClass": "",
+                "stickerText": "Customer Favorite! <i class=\"fas fa-thumbs-up\"></i>"
+            },
+            "name": "Simpson Ghost Bandit Helmet - Ponyboy",
+            "image": {
+                "url": "/images/products/simpson-ghost-bandit-ponyboy_480x480.jpg",
+                "altText": "Simpson Ghost Bandit Helmet - Ponyboy"
+            },
+            "styles": [],
+            "ratings": {
+                "rating": 9,
+                "count": 112
+            },
+            "price": {
+                "salePrice": "$499.95",
+                "wasPrice": ""
+            }
+        },
+        {
+            "productURL": "/",
+            "defaultSkuURL": "/",
+            "sticker": {
+                "cssClass": "",
+                "stickerText": "New Arrival!"
+            },
+            "name": "Simpson Speed Bandit Helmet - Gloss Black",
+            "image": {
+                "url": "/images/products/simpson-speed-bandit-gloss-black_480x480.jpg",
+                "altText": "Simpson Speed Bandit Helmet - Gloss Black"
+            },
+            "styles": [],
+            "ratings": {
+                "rating": 0,
+                "count": 0
+            },
+            "price": {
+                "salePrice": "$279.95",
+                "wasPrice": ""
+            }
+        }
+    ],
+    "facets": [
+        {
+            "id": "100000",
+            "label": "Brand",
+            "isOpen": true,
+            "isFilterable": true,
+            "filterLabelText": "Search Brands",
+            "seeAll": "brands",
+            "refinements": [
+                {
+                    "id": "100001",
+                    "label": "AGV Helmets",
+                    "count": 62,
+                    "isEnabled": true,
+                    "isSelected": false
+                },
+                {
+                    "id": "100002",
+                    "label": "Bell Powersports",
+                    "count": 79,
+                    "isEnabled": true,
+                    "isSelected": false
+                },
+                {
+                    "id": "100003",
+                    "label": "Biltwell",
+                    "count": 15,
+                    "isEnabled": true,
+                    "isSelected": false
+                },
+                {
+                    "id": "100004",
+                    "label": "Fly Racing",
+                    "count": 9,
+                    "isEnabled": true,
+                    "isSelected": false
+                },
+                {
+                    "id": "100005",
+                    "label": "HJC Helmets",
+                    "count": 65,
+                    "isEnabled": true,
+                    "isSelected": false
+                },
+                {
+                    "id": "100006",
+                    "label": "Icon",
+                    "count": 71,
+                    "isEnabled": true,
+                    "isSelected": false
+                },
+                {
+                    "id": "100007",
+                    "label": "Klim",
+                    "count": 2,
+                    "isEnabled": true,
+                    "isSelected": false
+                },
+                {
+                    "id": "100008",
+                    "label": "Nexx",
+                    "count": 28,
+                    "isEnabled": true,
+                    "isSelected": false
+                },
+                {
+                    "id": "100009",
+                    "label": "RSD",
+                    "count": 1,
+                    "isEnabled": true,
+                    "isSelected": false
+                },
+                {
+                    "id": "100010",
+                    "label": "Ruby Helmets",
+                    "count": 18,
+                    "isEnabled": true,
+                    "isSelected": false
+                }
+            ]
+        },
+        {
+            "id": "200000",
+            "label": "Customer Ratings",
+            "isOpen": false,
+            "isFilterable": false,
+            "filterLabelText": "",
+            "seeAll": "",
+            "refinements": [
+                {
+                    "id": "200001",
+                    "label": "5 Only",
+                    "count": 200,
+                    "isEnabled": true,
+                    "isSelected": false,
+                    "rating": 10
+                },
+                {
+                    "id": "200002",
+                    "label": "4 & up",
+                    "count": 300,
+                    "isEnabled": true,
+                    "isSelected": false,
+                    "rating": 8
+                },
+                {
+                    "id": "200003",
+                    "label": "3 & up",
+                    "count": 400,
+                    "isEnabled": true,
+                    "isSelected": false,
+                    "rating": 6
+                },
+                {
+                    "id": "200004",
+                    "label": "2 & up",
+                    "count": 600,
+                    "isEnabled": true,
+                    "isSelected": false,
+                    "rating": 4
+                },
+                {
+                    "id": "200005",
+                    "label": "1 & up",
+                    "count": 750,
+                    "isEnabled": true,
+                    "isSelected": false,
+                    "rating": 2
+                }
+            ]
+        },
+        {
+            "id": "300000",
+            "label": "Color",
+            "isOpen": false,
+            "isFilterable": false,
+            "filterLabelText": "",
+            "seeAll": "",
+            "refinements": [
+                {
+                    "id": "300001",
+                    "label": "Gloss Black",
+                    "count": 600,
+                    "isEnabled": true,
+                    "isSelected": false
+                },
+                {
+                    "id": "300002",
+                    "label": "Matte Black",
+                    "count": 500,
+                    "isEnabled": true,
+                    "isSelected": false
+                },
+                {
+                    "id": "300003",
+                    "label": "Red",
+                    "count": 224,
+                    "isEnabled": true,
+                    "isSelected": false
+                },
+                {
+                    "id": "300004",
+                    "label": "Blue",
+                    "count": 173,
+                    "isEnabled": true,
+                    "isSelected": false
+                },
+                {
+                    "id": "300005",
+                    "label": "White",
+                    "count": 497,
+                    "isEnabled": true,
+                    "isSelected": false
+                },
+                {
+                    "id": "300006",
+                    "label": "Green",
+                    "count": 84,
+                    "isEnabled": true,
+                    "isSelected": false
+                }
+            ]
+        },
+        {
+            "id": "400000",
+            "label": "Price Rage",
+            "isOpen": false,
+            "isFilterable": false,
+            "filterLabelText": "",
+            "seeAll": "",
+            "refinements": [
+                {
+                    "id": "400001",
+                    "label": "$0 - $200",
+                    "count": 97,
+                    "isEnabled": true,
+                    "isSelected": false
+                },
+                {
+                    "id": "400002",
+                    "label": "$201 - $400",
+                    "count": 134,
+                    "isEnabled": true,
+                    "isSelected": false
+                },
+                {
+                    "id": "400003",
+                    "label": "$401 - $600",
+                    "count": 425,
+                    "isEnabled": true,
+                    "isSelected": false
+                },
+                {
+                    "id": "400004",
+                    "label": "$601 - $800",
+                    "count": 233,
+                    "isEnabled": true,
+                    "isSelected": false
+                },
+                {
+                    "id": "400005",
+                    "label": "> $800",
+                    "count": 2,
+                    "isEnabled": true,
+                    "isSelected": false
+                }
+            ]
+        },
+        {
+            "id": "500000",
+            "label": "More Ways to Shop",
+            "isOpen": false,
+            "isFilterable": false,
+            "filterLabelText": "",
+            "seeAll": "",
+            "refinements": [
+                {
+                    "id": "500001",
+                    "label": "New Arrivals",
+                    "count": 28,
+                    "isEnabled": true,
+                    "isSelected": false
+                },
+                {
+                    "id": "500002",
+                    "label": "On Sale",
+                    "count": 175,
+                    "isEnabled": true,
+                    "isSelected": false
+                },
+                {
+                    "id": "500003",
+                    "label": "Open Box",
+                    "count": 97,
+                    "isEnabled": true,
+                    "isSelected": false
+                },
+                {
+                    "id": "500004",
+                    "label": "Restock",
+                    "count": 42,
+                    "isEnabled": true,
+                    "isSelected": false
+                }
+            ]
+        }
+    ]
+}

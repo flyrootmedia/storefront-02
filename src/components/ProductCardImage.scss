@@ -1,0 +1,63 @@
+@import '../sass/shared/mixins';
+@import '../sass/shared/breakpoints';
+
+.product-card-image {
+    position: relative;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+
+    a {
+        display: block;
+        width: 100%;
+        // to help with flicker from lazyloading
+        @include calc(min-height, '100vw / 2.62');
+    }
+    
+    img {
+        display: block;
+        width: 100%;
+    }
+}
+
+@include small-screen-up {
+    .product-card-image a {
+        // to help with flicker from lazyloading 
+        // - media query corresponds to product grid breakpoint
+        @include calc(min-height, '100vw / 3.90');
+    }
+}
+
+@include medium-screen-up {
+    .product-card {
+        &_image a {
+            // to help with flicker from lazyloading
+            // - media query corresponds to product grid breakpoint
+            @include calc(min-height, '100vw / 4.1');
+        }
+    }
+}
+
+@include large-screen-up {
+    .product-card-image a {
+        // to help with flicker from lazyloading
+        // - media query corresponds to product grid breakpoint
+        @include calc(min-height, '100vw / 6.248');
+    }
+}
+
+@include extra-large-screen-up {
+    .product-card-image a {
+        // to help with flicker from lazyloading
+        // - media query corresponds to product grid breakpoint
+        @include calc(min-height, '100vw / 6.248');
+    }
+}
+
+@include max-width-up {
+    .product-card-image a {
+        // to help with flicker from lazyloading
+        // - media query corresponds to product grid max-width
+        min-height: 209px;
+    }
+}

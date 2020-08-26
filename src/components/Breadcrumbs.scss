@@ -1,0 +1,19 @@
+@import '../sass/shared/variables';
+
+.breadcrumbs {
+    margin-bottom: $content-vertical-spacing;
+
+    li {
+        display: inline-block;
+        &::after {
+            content: '\003E';
+            margin: 0 5px;
+            text-decoration: none;
+            color: $color-brand-main;
+        }
+
+        &:last-child::after {
+            display: none;
+        }
+    }
+}

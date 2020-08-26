@@ -1,0 +1,95 @@
+@import '../sass/shared/mixins';
+@import '../sass/shared/breakpoints';
+
+// background overlay for all facets
+.facets-menu {
+    display: none; // hidden by default
+    position: fixed;
+    z-index: 100;
+    overflow: hidden;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    background: rgba(0,0,0,0.4);
+
+    // facets menu is open
+    &.-open {
+        display: block;
+    }
+
+    // all facets
+    &_facets {
+        position: relative;
+        padding-bottom: 75px;
+        box-sizing: border-box;
+        height: 100%;
+        overflow: hidden;
+        @include rounded(5px);
+        @include shadow (0, 0, 10px, rgba(0,0,0,0.3));
+        background: #fff;
+
+        h2 {
+            margin-left: 10px;
+        }
+
+        &-close {
+            position: absolute;
+            right: $content-horizontal-spacing;
+            top: $content-vertical-spacing;
+        }
+
+        &-scroll-wrapper {
+            max-height: 100%;
+            overflow: hidden;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        &-apply {
+            position: absolute;
+            left: 15%;
+            bottom: 20px;
+            width: 70%;
+        }
+    }
+}
+
+@include large-screen-up {
+    // background overlay for all facets
+    .facets-menu {
+        display: block;
+        position: static;
+        padding: 0 0 0 $content-horizontal-spacing;
+        margin: 0;
+        background: none;
+
+        // all facets
+        &_facets {
+            @include rounded(0);
+            @include shadow-none;
+
+            > h2 {
+                margin-top: 5px;
+                margin-left: 0;
+            }
+
+            &-close {
+                visibility: hidden;
+            }
+
+            &-apply {
+                display: none;
+            }
+        }
+    }
+}
+
+@include max-width-up {
+    // background overlay for all facets
+    .facets-menu {
+        padding: 0;
+    }
+}

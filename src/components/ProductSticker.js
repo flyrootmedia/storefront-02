@@ -1,8 +1,16 @@
+import './ProductSticker.scss';
+
 import React from 'react';
 
-const ProductSticker = () => {
+const ProductSticker = ({cssClass, stickerText}) => {
+    if (!stickerText) {
+        return <div />;
+    }
+
     return (
-        <div>ProductSticker</div>
+        <div className={`sticker-text ${cssClass}`}>
+            <span dangerouslySetInnerHTML={{ __html: stickerText}}></span>
+        </div>
     );
 }
 

@@ -1,0 +1,89 @@
+@import '../sass/shared/variables';
+@import '../sass/shared/mixins';
+@import '../sass/shared/breakpoints';
+
+.facet {
+    width: 100%;
+    height: 46px;
+    overflow: hidden;
+    position: relative;
+    @include transition (height, .2s, ease-out);
+
+    &:last-of-type {
+        // give room for apply button
+        margin-bottom: 92px;
+    }
+
+    // the facet is open 
+    &.-open {
+        height: auto;
+        max-height: 10000px;
+
+        &[data-filtering] {
+            height: auto !important;
+        }
+    }
+
+    &_header {
+        width: 100%;
+        height: 46px;
+        box-sizing: border-box;
+        background: #fff;
+        border: 1px solid $color-gray-four;
+        border-width: 0 0 1px 0;
+        font-size: $font-size-20;
+        text-align: left;
+        padding: 10px;
+    }
+
+    &_search {
+        position: relative;
+        margin: 10px 10px 0 10px;
+
+        input {
+            box-sizing: border-box;
+            @include calc(width, '100% - 20px');
+            height: 35px;
+            border: 1px solid $color-gray-four;
+            border-radius: 0;
+            padding: 0 35px 0 10px;
+        }
+
+        // font awesome search icon
+        .fas {
+            position: absolute;
+            top: 8px;
+            right: 30px;
+        }
+    }
+
+    &_options {
+        padding: $content-vertical-spacing $content-horizontal-spacing;
+    }
+}
+
+@include large-screen-up {
+    .facet {
+        // the facet is open
+        &.-open {
+            max-height: 500px;
+            .products-tools_facet-options.-overflow::after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                width: 90%;
+                height: 100px;
+                background: linear-gradient(rgba(255,255,255,0),#fff);
+                pointer-events: none;
+            }
+        }
+
+        // the list of refinements
+        &_options {
+            max-height: 350px;
+            overflow: hidden;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+    }
+}

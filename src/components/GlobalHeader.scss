@@ -1,0 +1,56 @@
+@import '../sass/shared/variables';
+@import '../sass/shared/mixins';
+
+.global-header {
+    padding: $content-vertical-spacing $content-horizontal-spacing;
+    background: $color-gray-one;
+    color: $color-gray-five;
+
+    a {
+        color: $color-gray-five;
+    }
+
+    .site-wrapper {
+        display: grid;
+        align-items: center;
+        grid-column-gap: 10px;
+        grid-template-columns: 40px 1fr 40px 40px;
+    }
+
+    .site-logo {
+        font-size: 2rem;
+        font-family: $brand-font;
+        font-weight: $font-weight-bold;
+    }
+
+    .fas {
+        font-size: 1.8rem;
+        color: $color-brand-main;
+        text-decoration: none;
+
+        &.hamburger {
+            border: none;
+            background-color: transparent;
+        }
+
+        &.fa-shopping-cart {
+            position: relative;
+        }
+    }
+    
+    .cart-count {
+        position: absolute;
+        top: -6px;
+        right: -5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: $color-gray-five;
+        color: $color-gray-one;
+        font-size: $font-size-14;
+        width: 20px;
+        height: 20px;
+        @include rounded(50%);
+    }
+
+}

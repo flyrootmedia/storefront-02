@@ -1,0 +1,33 @@
+// Shared Page Layout Styles
+@import './variables';
+@import './breakpoints';
+
+body {
+    background: $color-gray-one;
+}
+
+.site-wrapper {
+    min-width: $extra-small;
+    max-width: $max-width;
+    margin: 0 auto;
+
+    &.page-content-wrapper {
+        padding-top: $content-vertical-spacing;
+        padding-bottom: $content-vertical-spacing;
+    }
+}
+
+.global-content {
+    background: #fff;
+}
+
+.small-screen-padding {
+    padding: 0 $content-horizontal-spacing;
+}
+
+@media screen and (min-width: $max-width) {
+    .small-screen-padding {
+        padding: 0;
+    }
+}
+

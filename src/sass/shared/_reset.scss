@@ -1,0 +1,28 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+}
+
+input,
+button,
+select {
+    @include appearance(none);
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    border: none;
+    outline: none;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}

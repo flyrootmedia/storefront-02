@@ -3,10 +3,9 @@ import ReactDOM from 'react-dom';
 import App from './components/App';
 //import * as serviceWorker from './serviceWorker';
 
+// NOTE: removed <React.StrictMode> because it was causing 2 initial renders... maybe add back
 ReactDOM.render(
-    <React.StrictMode>
-        <App />
-    </React.StrictMode>,
+    <App />,
     document.getElementById('root')
 );
 

@@ -1,0 +1,48 @@
+@import '../sass/shared/variables';
+@import '../sass/shared/mixins';
+@import '../sass/shared/breakpoints';
+
+$vertical-spacing: 10px;
+
+.product-card {
+    @include rounded (4px);
+    border: 1px solid $color-gray-four;
+    padding: 5px 5px 14px 5px;
+    @include shadow(0, 0, 6px, rgba(0,0,0,0.1));
+    text-align: left;
+    background: #fff;
+    @include transition(box-shadow, 0.2s, ease-out);
+
+    &:hover {
+        @include shadow(0, 0, 10px, rgba(0,0,0,0.2));
+    }
+
+    &_content {
+        @include calc(width, '100% - 16px');
+        margin: 0 auto;
+
+        &>div {
+            margin-bottom: $vertical-spacing;
+        }
+    }
+
+    $lh: 1rem;
+
+    &_title {
+        a {
+            line-height: 20px;
+            font-family: $brand-font;
+            font-weight: $font-weight-semibold;
+            text-decoration: none;
+            @include line-clamp(2);
+        }
+    }
+}
+
+@include medium-screen-up {
+    .product-card {
+        &_content {
+            @include calc(width, '100% - 32px');
+        }
+    }
+}

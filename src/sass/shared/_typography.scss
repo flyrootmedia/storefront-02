@@ -1,0 +1,41 @@
+body {
+    font-family: $body-font;
+    font-size: $body-font-size;
+    color: $body-font-color;
+}
+
+a {
+    color: $color-brand-main;
+}
+
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6, 
+label,
+button,
+select,
+input {
+    font-family: $brand-font;
+}
+
+h1 {
+    font-size: $font-size-32;
+    font-weight: $font-weight-semibold;
+}
+
+.page-header {
+    &_item-count {
+        position: relative;
+        bottom: 2px;
+        font-size: 0.7em;
+        color: $color-gray-three;
+    }
+}
+
+h2 {
+    font-size: $font-size-28;
+    font-weight: $font-weight-semibold;
+}

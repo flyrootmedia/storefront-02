@@ -1,0 +1,54 @@
+@import '../sass/shared/variables';
+@import '../sass/shared/breakpoints';
+
+.applied-facets {
+    margin-bottom: $content-vertical-spacing;
+    white-space: nowrap;
+    overflow: hidden;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+
+    .clear-all {
+        margin-right: 6px;
+    }
+
+    button {
+        margin-right: 6px;
+        height: 36px;
+        position: relative;
+        border: none;
+        border-radius: 25px;
+        padding: 0 40px 0 10px;
+        background-color: $color-gray-two;
+        color: #fff;
+
+        &::after {
+            position: absolute;
+            right: 7px;
+            top: 6px;
+            content: '\2715';
+            color: $color-gray-four;
+            background: $color-gray-three;
+            border: 4px solid $color-gray-two;
+            border-radius: 100%;
+            width: 16px;
+            height: 16px;
+            font-size: 10px;
+            margin: 0;
+            padding: 0;
+            line-height: 17px;
+            transition: all .2s ease-out;
+        }
+
+        &:hover::after {
+            color: $color-gray-two;
+            border-color: $color-gray-four;
+        }
+    }
+}
+
+@include large-screen-up {
+    .applied-facets {
+        grid-column-start: span 2;
+    }
+}

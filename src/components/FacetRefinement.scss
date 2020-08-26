@@ -1,0 +1,57 @@
+@import '../sass/shared/variables';
+
+.facet-refinement {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border: none;
+    background: none;
+    text-align: left;
+    margin-bottom: 10px;
+
+    &::before {
+        content: '';
+        display: inline-block;
+        flex: 0 0 15px;
+        height: 15px;
+        border: 1px solid $color-gray-four;
+        margin-right: 8px;
+    }
+
+    &:hover {
+        text-decoration: underline;
+
+        &::before {
+            border-color: $color-brand-main;
+        }
+    }
+
+    &:disabled:hover {
+        text-decoration: none;
+
+        &::before {
+            border-color: $color-gray-four;
+        }
+    }
+
+    &.-see-all {
+        &::before {
+            visibility: hidden;
+        }
+    }
+
+    &.-selected::before, 
+    &.-selected:hover::before {
+        border-color: $color-brand-main;
+        background: $color-brand-main;
+    }
+
+    .count {
+        margin-left: 5px;
+    }
+
+    .ratings-stars {
+        margin-right: 5px;
+    }
+}

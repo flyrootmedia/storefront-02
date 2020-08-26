@@ -1,0 +1,31 @@
+@import '../sass/shared/variables';
+@import '../sass/shared/breakpoints';
+@import '../sass/shared/ratings-stars';
+
+.product-ratings {
+    a {
+        display: flex;
+        align-items: center;
+        position: relative;
+        top: 1px;
+        font-size: $font-size-12;
+
+        .ratings-stars {
+            margin-right: 5px;
+            
+
+            &:hover, &:focus {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+@include medium-screen-up {
+    .product-ratings {
+        a {
+            top: 0;
+            font-size: $font-size-13;
+        }
+    }
+}

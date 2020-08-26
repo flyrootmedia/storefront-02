@@ -1,0 +1,35 @@
+@import '../sass/shared/variables';
+@import '../sass/shared/breakpoints';
+
+.products-grid {
+    display: grid;
+    grid-template-columns: 49% 49%;
+    grid-column-gap: 2%;
+    grid-row-gap: 8px;
+    min-width: $extra-small;
+    max-width: $max-width;
+    margin: 0 auto $content-vertical-spacing auto;
+    transition: opacity 100ms ease-out;
+}
+
+@include small-screen-up {
+    .products-grid {
+        grid-template-columns: 32% 32% 32%;
+        grid-column-gap: 1.3333%;
+    }
+}
+
+@include extra-large-screen-up {
+    .products-grid {
+        grid-template-columns: 24% 24% 24% 24%;
+        grid-column-gap: 1.3333%;
+    }
+}
+
+@include max-width-up {
+    .products-grid {
+        grid-template-columns: 19% 19% 19% 19% 19%;
+        grid-column-gap: 1.25%;
+        grid-row-gap: 16px;
+    }
+}

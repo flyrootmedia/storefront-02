@@ -1,0 +1,86 @@
+// Named Colors
+$orange-roughy: #d34a1d;
+$rust: #bb3c12;
+$cinnabar: #e7592b;
+$mineshaft: #222;
+$tundora: #444;
+$dusty-gray: #999;
+$alto: #ddd;
+$gallery: #efefef;
+
+
+// Brand colors
+$color-brand-main: $orange-roughy;
+$color-brand-main-shade: $rust;
+$color-brand-main-tint: $cinnabar;
+$color-gray-one: $mineshaft;
+$color-gray-two: $tundora;
+$color-gray-three: $dusty-gray;
+$color-gray-four: $alto;
+$color-gray-five: $gallery;
+
+// Font sizes converted from px to REM
+$font-size-8: 0.5rem;
+$font-size-9: 0.563rem;
+$font-size-10: 0.625rem;
+$font-size-11: 0.688rem;
+$font-size-12: 0.75rem;
+$font-size-13: 0.813rem;
+$font-size-14: 0.875rem;
+$font-size-15: 0.938rem;
+$font-size-16: 1rem;
+$font-size-17: 1.063rem;
+$font-size-18: 1.125rem;
+$font-size-19: 1.188rem;
+$font-size-20: 1.25rem;
+$font-size-21: 1.313rem;
+$font-size-22: 1.375rem;
+$font-size-23: 1.438rem;
+$font-size-24: 1.5rem;
+$font-size-25: 1.563rem;
+$font-size-26: 1.625rem;
+$font-size-27: 1.688rem;
+$font-size-28: 1.75rem;
+$font-size-29: 1.813rem;
+$font-size-30: 1.875rem;
+$font-size-31: 1.938rem;
+$font-size-32: 2rem;
+$font-size-33: 2.063rem;
+$font-size-34: 2.125rem;
+$font-size-35: 2.188rem;
+$font-size-36: 2.25rem;
+$font-size-37: 2.313rem;
+$font-size-38: 2.375rem;
+$font-size-39: 2.438rem;
+$font-size-40: 2.5rem;
+$font-size-41: 2.563rem;
+$font-size-42: 2.625rem;
+$font-size-43: 2.688rem;
+$font-size-44: 2.75rem;
+$font-size-45: 2.813rem;
+$font-size-46: 2.875rem;
+$font-size-47: 2.938rem;
+$font-size-48: 3rem;
+$font-size-49: 3.063rem;
+
+// Font weights
+$font-weight-regular: 400;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+// Fonts
+$body-font: Arial, sans-serif;
+$brand-font: 'Source Sans Pro', Arial, sans-serif;
+$body-font-size: $font-size-16;
+$body-font-color: $color-gray-two;
+
+// Layout
+$content-vertical-spacing: 20px;
+$content-horizontal-spacing: 15px;
+
+// Common SVG Background images - we need to url-escape the content of the svg here -- e.g. # gets replaced with %23
+$down-arrow-image: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'><defs><style>.a,.b{fill:none;}.b{stroke:%23ffffff;stroke-linecap:round;stroke-width:2px;}</style></defs><g transform='translate(5100 -1608) rotate(90)'><rect class='a' width='24' height='24' transform='translate(1608 5076)'/><path class='b' d='M5263.026,508.513l6.4,6.4-6.4,6.4' transform='translate(-3646.526 4573.188)'/></g></svg>";
+$filter-image: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'><defs><style>.a,.b{fill:none;}.b,.c{stroke:%232d2d2d;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px;}.c{fill:%23fff;}</style></defs><g transform='translate(-98 -261)'><rect class='a' width='24' height='24' transform='translate(122 261) rotate(90)'/><g transform='translate(-11)'><g transform='translate(79.619 240.934)'><path class='b' d='M52.631,65.625h-22' transform='translate(-0.25 -28.559)'/><path class='c' d='M74.375,59.875a3,3,0,1,0,3-3A3,3,0,0,0,74.375,59.875Z' transform='translate(-31.994 -22.809)'/></g><g transform='translate(79.619 231.934)'><path class='b' d='M52.631,65.625h-22' transform='translate(-0.25 -28.559)'/><path class='c' d='M74.375,59.875a3,3,0,1,0,3-3A3,3,0,0,0,74.375,59.875Z' transform='translate(-39.994 -22.809)'/></g></g></g></svg>";
+
+
+

@@ -1,0 +1,30 @@
+@import '../sass/shared/variables';
+@import '../sass/shared/breakpoints';
+
+.product-price {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+    font-size: $font-size-18;
+    font-weight: 500;
+
+    &_column {
+        display: flex;
+        align-items: center;
+    }
+
+    .was-price {
+        font-size: $font-size-14;
+        font-weight: normal;
+        color: $color-gray-one;
+        text-decoration: line-through;
+    }
+}
+
+@include medium-screen-up {
+    .product-price {
+        grid-template-columns: auto 1fr;
+        font-size: $font-size-20;
+    }
+}

@@ -1,0 +1,23 @@
+@import '../sass/shared/variables';
+@import '../sass/shared/breakpoints';
+
+.global-footer {
+    padding: $content-vertical-spacing $content-horizontal-spacing;
+    background: $color-gray-one;
+    color: $color-gray-four;
+
+    a, span {
+        display: block;
+        color: $color-gray-four;
+        margin-right: 12px;
+        margin-bottom: 15px;
+    }
+}
+
+@include medium-screen-up {
+    .global-footer {
+        a, span {
+            display: inline;
+        }
+    }
+}

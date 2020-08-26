@@ -1,0 +1,82 @@
+@import '../sass/shared/variables';
+@import '../sass/shared/mixins';
+@import '../sass/shared/breakpoints';
+
+$sticker-height: 38px;
+$product-card-sticker-height: 28px;
+$vertical-spacing: 10px;
+
+// global stickers (hypothetically could be on PDPs or elsewhere)
+.sticker-text {
+    position: relative;
+    font-family: $brand-font;
+    font-weight: $font-weight-semibold;
+    @include rounded (4px, 0, 0, 4px);
+    height: $sticker-height;
+    width: 100%;
+    font-size: $font-size-14;
+    line-height: $sticker-height;
+    color: #fff;
+    padding: 0 15px;
+    background: $color-gray-one;
+
+    span {
+        display: block;
+        @include ellipsis;
+    }
+
+    &::after {
+        position: absolute;
+        top: 0;
+        right: -28px;
+        content: '';
+        display: block;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 14px;
+        border-color: $color-gray-one transparent transparent $color-gray-one;
+    }
+
+    &.-sale {
+        background: $color-brand-main;
+
+        &::after {
+            border-color: $color-brand-main transparent transparent $color-brand-main;
+        }
+    }
+
+    &.-out-of-stock {
+        background: $color-gray-three;
+
+        &::after {
+            border-color: $color-gray-three transparent transparent $color-gray-three;
+        }
+    }
+
+    .fas {
+        margin-left: 5px;
+    }
+}
+
+// Stickers in product cards
+.product-card_sticker {
+    height: $product-card-sticker-height;
+    margin-bottom: $vertical-spacing; 
+
+    .sticker-text {
+        height: $product-card-sticker-height;
+        width: 55%;
+        line-height: $product-card-sticker-height;
+    }
+}
+
+@include medium-screen-up {
+    // Stickers in product cards
+    .product-card_sticker {
+        .sticker-text {
+            font-size: 1rem;
+            width: 65%;
+        }
+    }
+}

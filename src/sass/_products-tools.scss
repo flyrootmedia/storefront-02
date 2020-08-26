@@ -1,0 +1,37 @@
+@import '../sass/shared/variables';
+@import '../sass/shared/breakpoints';
+
+.products-tools {
+    position: relative;
+
+    // open filters/sorting
+    &_open-filters-sorting {
+        display: grid;
+        grid-template-columns: 49% 49%;
+        grid-column-gap: 2%;
+        margin-bottom: $content-vertical-spacing;
+    }
+}
+
+@include large-screen-up {
+    .products-tools {
+        display: grid;
+        grid-template-columns: 300px 1fr;
+        grid-column-gap: $content-horizontal-spacing;
+        
+        // open filters/sorting
+        &_open-filters-sorting {
+            padding-right: $content-horizontal-spacing;
+            grid-template-columns: 1fr 200px;
+        }
+    }
+}
+
+@include extra-large-screen-up {
+    .products-tools {
+        // open filters/sorting
+        &_open-filters-sorting {
+            padding-right: 0;
+        }
+    }
+}

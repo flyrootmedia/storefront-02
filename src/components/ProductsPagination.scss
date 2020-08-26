@@ -1,0 +1,27 @@
+@import '../sass/shared/mixins';
+@import '../sass/shared/breakpoints';
+
+.products-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &_btn.styled-button, &_page-select-wrapper {
+        margin: 0 5px;
+    }
+
+    // Pagination select
+    &_page-select-wrapper {
+        width: 190px;
+
+        &.styled-select select {
+            padding: 0 0 0 55px;
+        }
+    } 
+}
+
+@include large-screen-up {
+    .products-pagination {
+        justify-content: flex-end;
+    }
+}

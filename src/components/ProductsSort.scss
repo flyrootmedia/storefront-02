@@ -1,0 +1,28 @@
+@import '../sass/shared/variables';
+@import '../sass/shared/breakpoints';
+
+.products-sort {
+    &_select-wrapper.styled-select {
+        label {
+            display: none;
+        }
+
+        select {
+            padding-left: $content-horizontal-spacing;
+        }
+    }
+}
+
+@include large-screen-up {
+    .products-sort {
+        &_select-wrapper.styled-select {
+            label {
+                display: block;
+            }
+
+            select {
+                padding-left: 67px;
+            }
+        }
+    }
+}

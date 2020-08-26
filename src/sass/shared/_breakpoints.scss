@@ -1,0 +1,49 @@
+$extra-small: 320px;
+$small: 500px;
+$medium: 768px;
+$large: 1024px;
+$extra-large: 1300px;
+$max-width: 1650px;
+
+// mixins for media queries
+@mixin custom-screen-up($width) {
+    @media only screen and (min-width: $width) {
+        @content;
+    }
+}
+
+@mixin extra-small-screen-up {
+    @media only screen and (min-width: #{$extra-small}) {
+        @content;
+    }
+}
+
+@mixin small-screen-up {
+    @media only screen and (min-width: #{$small}) {
+        @content;
+    }
+}
+
+@mixin medium-screen-up {
+    @media only screen and (min-width: #{$medium}) {
+        @content;
+    }
+}
+
+@mixin large-screen-up {
+    @media only screen and (min-width: #{$large}) {
+        @content;
+    }
+}
+
+@mixin extra-large-screen-up {
+    @media only screen and (min-width: #{$extra-large}) {
+        @content;
+    }
+}
+
+@mixin max-width-up {
+    @media only screen and (min-width: #{$max-width}) {
+        @content;
+    }
+}

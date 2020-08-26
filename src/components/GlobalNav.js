@@ -1,8 +1,105 @@
+import './GlobalNav.scss';
+
 import React from 'react';
 
-const GlobalNav = () => {
+const GlobalNav = ({ navIsOpen, setNavState }) => {
     return (
-        <div>GlobalNav</div>
+        <nav data-global-nav id="globalNav" className={`global-nav ${navIsOpen === true ? '-open' : '' }`}>
+            <div className="global-nav_scroll-wrapper">
+                <h2>Menu</h2>
+
+                <button
+                    type="button" 
+                    data-js="global-nav-close" 
+                    className="global-nav_close btn -primary -close"
+                    onClick={setNavState}>
+                    &times;<span className="screen-reader-only">Close Menu</span>
+                </button>
+
+                <ul data-nav-level-one>
+                    <li data-nav-menu data-open className="global-nav_menu -open">
+                        <button 
+                            type="button" 
+                            data-js="nav-level-one-btn"
+                            data-menu-id="helmets">
+                            Helmets
+                        </button>
+                        <ul data-menu-options data-menu-id="helmets">
+                            <li className="global-nav_menu-header">
+                                <h4>Helmets</h4>
+                                <a href="plp.html" className="see-all">See all</a>
+                            </li>
+                            <li><a href="plp.html">Full Face</a></li>
+                            <li><a href="plp.html">Modular</a></li>
+                            <li><a href="plp.html">Open Face (3/4)</a></li>
+                            <li><a href="plp.html">Half</a></li>
+                            <li><a href="plp.html">Dual Sport</a></li>
+                            <li><a href="plp.html">Dirt</a></li>
+                            <li><a href="plp.html">Novelty</a></li>
+                        </ul>
+                    </li>
+                    <li data-nav-menu className="global-nav_menu">
+                        <button 
+                            type="button" 
+                            data-js="nav-level-one-btn"
+                            data-menu-id="ridingapparel">
+                            Riding Apparel
+                        </button>
+                        <ul data-menu-options data-menu-id="ridingapparel">
+                            <li className="global-nav_menu-header">
+                                <h4>Riding Apparel</h4>
+                                <a href="plp.html" className="see-all">See all</a>
+                            </li>
+                            <li><a href="plp.html">Riding Jackets</a></li>
+                            <li><a href="plp.html">Riding Pants</a></li>
+                            <li><a href="plp.html">Gloves</a></li>
+                            <li><a href="plp.html">Boots</a></li>
+                            <li><a href="plp.html">Rain Gear</a></li>
+                        </ul>
+                    </li>
+                    <li data-nav-menu className="global-nav_menu">
+                        <button 
+                            type="button" 
+                            data-js="nav-level-one-btn"
+                            data-menu-id="accessories">
+                            Accessories
+                        </button>
+                        <ul data-menu-options data-menu-id="accessories">
+                            <li className="global-nav_menu-header">
+                                <h4>Accessories</h4>
+                                <a href="plp.html" className="see-all">See all</a>
+                            </li>
+                            <li><a href="plp.html">Bluetooth</a></li>
+                            <li><a href="plp.html">Video/Photography</a></li>
+                            <li><a href="plp.html">Mounts</a></li>
+                            <li><a href="plp.html">Racks</a></li>
+                            <li><a href="plp.html">Maintenance</a></li>
+                        </ul>
+                    </li>
+                    <li data-nav-menu className="global-nav_menu">
+                        <button 
+                            type="button" 
+                            data-js="nav-level-one-btn"
+                            data-menu-id="parts">
+                            Parts
+                        </button>
+                        <ul data-menu-options data-menu-id="parts">
+                            <li className="global-nav_menu-header">
+                                <h4>Parts</h4>
+                                <a href="plp.html" className="see-all">See all</a>
+                            </li>
+                            <li><a href="plp.html">Handlebars</a></li>
+                            <li><a href="plp.html">Grips</a></li>
+                            <li><a href="plp.html">Mirrors</a></li>
+                            <li><a href="plp.html">Tires</a></li>
+                            <li><a href="plp.html">Windshields</a></li>
+                            <li><a href="plp.html">Hand Controls</a></li>
+                            <li><a href="plp.html">Foot Controls</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
     );
 }
 

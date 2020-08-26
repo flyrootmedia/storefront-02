@@ -1,0 +1,13 @@
+@import '../sass/shared/breakpoints';
+
+.facets-open.styled-button {
+    padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+@include large-screen-up {
+    .facets-open {
+        visibility: hidden;
+    }
+}

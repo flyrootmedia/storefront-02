@@ -1,0 +1,62 @@
+@import 'mixins';
+
+.screen-reader-only {
+    @include screen-reader-only;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.invisible{
+    visibility: hidden !important;
+}
+
+.transparent {
+    opacity: 0;
+}
+
+.superscript, .subscript {
+    font-size: 60%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+.superscript {
+    top: -0.5em;
+}
+
+.subscript {
+    bottom: -0.25em;
+}
+
+.body-no-scroll {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    overflow: -moz-hidden-unscrollable;
+    -webkit-overflow-scrolling: auto;
+}
+
+.hide-scrollbars {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.hide-scrollbars::-webkit-scrollbar {
+    display: none;
+}
+
+.hide-for-small-screens {
+    display: none;
+}
+
+@media screen and (min-width: $medium) {
+    .hide-for-small-screens {
+        display: inline;
+    }
+}

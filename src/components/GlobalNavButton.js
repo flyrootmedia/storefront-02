@@ -1,8 +1,10 @@
 import React from 'react';
 
-const GlobalNavButton = () => {
+const GlobalNavButton = ({ onClick }) => {
     return (
-        <div>GlobalNavButton</div>
+        <button onClick={onClick} className="fas fa-bars hamburger">
+            <span className="screen-reader-only">Open Menu</span>
+        </button>
     );
 }
 
