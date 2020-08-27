@@ -26,6 +26,10 @@
         @include button-state-focused('primary');
     }
 
+    &.-disabled {
+        @include button-state-disabled;
+    }
+
     label {
         position: absolute;
         left: 15px;

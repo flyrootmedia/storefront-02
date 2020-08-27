@@ -1,5 +1,4 @@
 import './ProductSticker.scss';
-
 import React from 'react';
 
 const ProductSticker = ({cssClass, stickerText}) => {

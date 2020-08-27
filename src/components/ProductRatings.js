@@ -1,5 +1,4 @@
 import './ProductRatings.scss';
-
 import React from 'react';
 
 const ProductRatings = ({ detailURL, rating, count }) => {

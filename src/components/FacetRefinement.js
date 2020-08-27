@@ -1,18 +1,7 @@
 import './FacetRefinement.scss';
-import React, { useState, useEffect, useRef } from 'react';
+import React from 'react';
 
 const FacetRefinement = ({ refinement, onSelectionsChanged }) => {
-    const [isSelected, setIsSelected] = useState(refinement.isSelected);
-    const isInitialMount = useRef(true);
-
-    useEffect(() => {
-        if (isInitialMount.current) {
-            isInitialMount.current = false;
-        } else {
-            onSelectionsChanged(refinement.id, isSelected);
-        }
-    }, [isSelected, onSelectionsChanged, refinement.id]);
-
     // render the rating stars if applicable
     let refinementRating = '';
 
@@ -28,10 +17,10 @@ const FacetRefinement = ({ refinement, onSelectionsChanged }) => {
         <button 
             type="button"
             disabled={refinement.isEnabled ? false : true} 
-            className={`facet-refinement ${isSelected ? '-selected' : ''}`} 
-            onClick={() => setIsSelected(!isSelected)}
+            className={`facet-refinement ${refinement.isSelected ? '-selected' : ''}`} 
+            onClick={() => onSelectionsChanged('refinements', refinement.id, !refinement.isSelected)}
         >
-            {refinementRating}{refinement.label} <span data-count className="count">({refinement.count})</span>
+            {refinementRating}{refinement.label} <span className="count">({refinement.count})</span>
         </button>
     );
 }

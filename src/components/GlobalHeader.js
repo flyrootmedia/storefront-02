@@ -1,5 +1,4 @@
 import './GlobalHeader.scss';
-
 import React, { useState } from 'react';
 import GlobalNav from './GlobalNav';
 import GlobalNavButton from './GlobalNavButton';

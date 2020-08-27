@@ -1,5 +1,4 @@
 import './ProductCardStyles.scss';
-
 import React from 'react';
 
 const ProductCardStyles = ({ styles }) => {
@@ -14,7 +13,7 @@ const ProductCardStyles = ({ styles }) => {
 
         // show the "more styles" link
         if (index === 5 && moreStyles > 0) {
-            return <a key={style.altText} data-more href="/">{`+${moreStyles}`}</a>
+            return <a key={style.altText} href="/">{`+${moreStyles}`}</a>
         }
 
         return (
@@ -26,7 +25,8 @@ const ProductCardStyles = ({ styles }) => {
 
     return (
         <div className="product-card-styles">
-            <div data-product-card-thumbs className="product-card-styles_thumbs hide-scrollbars">
+            {/* TODO: wire up hovers */}
+            <div className="product-card-styles_thumbs hide-scrollbars">
                 {renderedStyles}
             </div>
         </div>

@@ -1,5 +1,4 @@
 import './ProductPrice.scss';
-
 import React from 'react';
 
 const ProductPrice = ({salePrice, wasPrice}) => {

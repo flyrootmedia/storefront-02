@@ -17,7 +17,10 @@ h6,
 label,
 button,
 select,
-input {
+input,
+p,
+ol,
+ul {
     font-family: $brand-font;
 }
 
@@ -38,4 +41,13 @@ h1 {
 h2 {
     font-size: $font-size-28;
     font-weight: $font-weight-semibold;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.3rem;
+}
+
+ol li {
+    margin-bottom: 5px;
 }

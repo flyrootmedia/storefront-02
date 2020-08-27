@@ -1,5 +1,4 @@
 import './Breadcrumbs.scss';
-
 import React from 'react';
 
 const Breadcrumbs = () => {

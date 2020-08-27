@@ -1,5 +1,4 @@
 import './ProductsGrid.scss'; 
-
 import React from 'react';
 import ProductCard from './ProductCard';
 
@@ -10,7 +9,7 @@ const ProductsGrid = ({ products }) => {
     });
 
     return (
-        <div data-products-grid className="products-grid">
+        <div className="products-grid">
             {renderedProducts}
         </div>
     );

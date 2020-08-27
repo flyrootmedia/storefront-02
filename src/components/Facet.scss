@@ -19,6 +19,7 @@
         height: auto;
         max-height: 10000px;
 
+        // TODO: this may not be needed
         &[data-filtering] {
             height: auto !important;
         }

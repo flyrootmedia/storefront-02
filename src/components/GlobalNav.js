@@ -1,30 +1,26 @@
 import './GlobalNav.scss';
-
 import React from 'react';
 
 const GlobalNav = ({ navIsOpen, setNavState }) => {
     return (
-        <nav data-global-nav id="globalNav" className={`global-nav ${navIsOpen === true ? '-open' : '' }`}>
+        <nav id="globalNav" className={`global-nav ${navIsOpen === true ? '-open' : '' }`}>
             <div className="global-nav_scroll-wrapper">
                 <h2>Menu</h2>
 
                 <button
-                    type="button" 
-                    data-js="global-nav-close" 
+                    type="button"  
                     className="global-nav_close btn -primary -close"
                     onClick={setNavState}>
                     &times;<span className="screen-reader-only">Close Menu</span>
                 </button>
 
-                <ul data-nav-level-one>
-                    <li data-nav-menu data-open className="global-nav_menu -open">
+                <ul>
+                    <li className="global-nav_menu -open">
                         <button 
-                            type="button" 
-                            data-js="nav-level-one-btn"
-                            data-menu-id="helmets">
+                            type="button">
                             Helmets
                         </button>
-                        <ul data-menu-options data-menu-id="helmets">
+                        <ul>
                             <li className="global-nav_menu-header">
                                 <h4>Helmets</h4>
                                 <a href="plp.html" className="see-all">See all</a>
@@ -38,14 +34,12 @@ const GlobalNav = ({ navIsOpen, setNavState }) => {
                             <li><a href="plp.html">Novelty</a></li>
                         </ul>
                     </li>
-                    <li data-nav-menu className="global-nav_menu">
+                    <li className="global-nav_menu">
                         <button 
-                            type="button" 
-                            data-js="nav-level-one-btn"
-                            data-menu-id="ridingapparel">
+                            type="button">
                             Riding Apparel
                         </button>
-                        <ul data-menu-options data-menu-id="ridingapparel">
+                        <ul>
                             <li className="global-nav_menu-header">
                                 <h4>Riding Apparel</h4>
                                 <a href="plp.html" className="see-all">See all</a>
@@ -57,14 +51,12 @@ const GlobalNav = ({ navIsOpen, setNavState }) => {
                             <li><a href="plp.html">Rain Gear</a></li>
                         </ul>
                     </li>
-                    <li data-nav-menu className="global-nav_menu">
+                    <li className="global-nav_menu">
                         <button 
-                            type="button" 
-                            data-js="nav-level-one-btn"
-                            data-menu-id="accessories">
+                            type="button">
                             Accessories
                         </button>
-                        <ul data-menu-options data-menu-id="accessories">
+                        <ul>
                             <li className="global-nav_menu-header">
                                 <h4>Accessories</h4>
                                 <a href="plp.html" className="see-all">See all</a>
@@ -76,14 +68,12 @@ const GlobalNav = ({ navIsOpen, setNavState }) => {
                             <li><a href="plp.html">Maintenance</a></li>
                         </ul>
                     </li>
-                    <li data-nav-menu className="global-nav_menu">
+                    <li className="global-nav_menu">
                         <button 
-                            type="button" 
-                            data-js="nav-level-one-btn"
-                            data-menu-id="parts">
+                            type="button">
                             Parts
                         </button>
-                        <ul data-menu-options data-menu-id="parts">
+                        <ul>
                             <li className="global-nav_menu-header">
                                 <h4>Parts</h4>
                                 <a href="plp.html" className="see-all">See all</a>

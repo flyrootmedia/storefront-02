@@ -1,6 +1,5 @@
 import './ProductListingPage.scss';
-
-import React, {useState} from 'react';
+import React, {useState, useEffect, useCallback, useRef} from 'react';
 import Breadcrumbs from './Breadcrumbs';
 import PageHeader from './PageHeader';
 import AppliedFacets from './AppliedFacets';
@@ -11,13 +10,72 @@ import ProductsGrid from './ProductsGrid';
 import ProductsPagination from './ProductsPagination';
 import usePlpResults from '../hooks/usePlpResults';
 
-const ProductListingPage = (initialFacetIds, initialSort, itemsPerPage, startingPageIndex) => {
-    // TODO: this should default to empty string. Needs to come from data
-    const [pageHeader, setPageHeader] = useState('Explore Full Face Helmets');
-    // TODO: set count from data
-    const [itemCount, setItemCount] = useState('750');
+const ProductListingPage = ({initialFacetIds, initialSort, itemsPerPage, startingPageIndex}) => {
+    // consts/vars
+    const plpEl = useRef();
+
+    // state
     const [isFacetsOpen, setIsFacetsOpen] = useState(false);
-    const [plpResults, plpRequest] = usePlpResults(initialFacetIds, initialSort, itemsPerPage, startingPageIndex);
+    const [plpResults, plpRequest] = usePlpResults(initialFacetIds, initialSort, itemsPerPage, startingPageIndex, '/apis/plp.json');
+
+    // callback to update results when refinement selections change
+    const requestNewPlpResults = useCallback((paramToChange, changedParamValue, isSelected) => {
+        console.log('request from callback:', paramToChange, changedParamValue, isSelected);
+
+        let requestRefinements = plpEl.current.facetIds ? plpEl.current.facetIds : initialFacetIds;
+        let requestSort = plpEl.current.sort ? plpEl.current.sort : initialSort;
+        let requestItemsPerPage = plpEl.current.itemsPerPage ? plpEl.current.itemsPerPage : itemsPerPage;
+        let requestPageIndex = plpEl.current.pageIndex ? plpEl.current.pageIndex : startingPageIndex;
+        let requestPath = isSelected ? '/apis/plpFiltered.json' : '/apis/plp.json';
+
+        switch (paramToChange) {
+            case 'refinements':
+                let facetIdsArr = requestRefinements.split('+');
+                const index = facetIdsArr.indexOf(changedParamValue); 
+
+                if (index > -1 && !isSelected) {
+                    facetIdsArr.splice(index, 1);
+                } else if (index === -1 && isSelected) {
+                    facetIdsArr.push(changedParamValue);
+                }
+
+                // update ref and request values
+                plpEl.current.facetIds = facetIdsArr.join('+');
+                requestRefinements = plpEl.current.facetIds;
+                break;
+            case 'sort':
+                // update ref and request values
+                plpEl.current.sort = changedParamValue
+                requestSort = plpEl.current.sort;
+
+                // this is just for testing purposes
+                requestPath = changedParamValue === 'priceHighToLow' ? '/apis/plpSorted.json' : '/apis/plp.json';
+                break;
+            case 'pageNum':
+                // update ref and request values
+                plpEl.current.pageIndex = changedParamValue
+                requestPageIndex = plpEl.current.pageIndex;
+
+                // this is just for testing purposes
+                requestPath = changedParamValue > 0 ? '/apis/plpPaged.json' : '/apis/plp.json';
+                break;
+            default:
+                break;
+        }
+
+        plpRequest(
+            requestRefinements, 
+            requestSort, 
+            requestItemsPerPage, 
+            requestPageIndex, 
+            requestPath
+        );
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [initialFacetIds, initialSort, itemsPerPage, startingPageIndex]);
+
+    useEffect(() => {
+        console.log('plpResults loaded');
+    }, [plpResults]);
 
     // opens the facets menu overlay at mobile sizes
     const onFacetsOpenClick = (event) => {
@@ -29,44 +87,52 @@ const ProductListingPage = (initialFacetIds, initialSort, itemsPerPage, starting
         setIsFacetsOpen(false);
     };
 
-    // update results on facets menu selections
-    const updateRefinementSelections = (id, isSelected) => {
-        console.log('Refinements changed: ', id, isSelected);
-    };
-
     if (!plpResults.products) {
-        console.log('loading');
         return (
             <h1>Loading...</h1>
         );
     }
 
-    console.log(plpResults);
-
     return (
-        <section id="globalContent" className="global-content product-listing-page">
+        <section ref={plpEl} id="globalContent" className="global-content product-listing-page">
             <div className="site-wrapper page-content-wrapper">
                 <Breadcrumbs />
                 <PageHeader 
-                    headerText={pageHeader}
-                    itemCount={itemCount}
+                    headerText={plpResults.pageHeader}
+                    itemCount={plpResults.itemCount}
                 />
+                <div className="small-screen-padding">
+                    <p><strong>NOTE:</strong> This app is currently set up with hardcoded test JSON for the different user selections, so there&rsquo;s only
+                    one set of data you&rsquo;ll see change when selecting a filter, a new sort, or changing the pagination. To see it behave
+                    somewhat as expected, use the following:</p>
+                    <ol>
+                        <li>For filtering, open the Brand filter and toggle the "Biltwell" option.</li>
+                        <li>For sorting, select "$ (High - Low)" then back to "Featured"</li>
+                        <li>For pagination, click the "next" button or select page 5, then go back to page 1</li>
+                    </ol>
+                </div>
                 <section id="productsTools" className="products-tools">
                     <AppliedFacets />
                     <FacetsMenu 
                         facets={plpResults.facets} 
                         isOpen={isFacetsOpen} 
-                        onSelectionsChanged={(id, isSelected) => updateRefinementSelections(id, isSelected)}
+                        onSelectionsChanged={requestNewPlpResults}
                         onCloseClick={onFacetsCloseClick}
                     />
                     <div className="products-tools_products small-screen-padding">
                         <div className="products-tools_open-filters-sorting">
                             <FacetsOpen onClick={onFacetsOpenClick} />
-                            <ProductsSort />
+                            <ProductsSort 
+                                sortOptions={plpResults.sortOptions} 
+                                onSortChanged={requestNewPlpResults} 
+                            />
                         </div>
                         <ProductsGrid products={plpResults.products} />
                         <div className="products-tools_products-footer">
-                            <ProductsPagination />
+                            <ProductsPagination 
+                                pagination={plpResults.pagination}
+                                onPaginationChanged={requestNewPlpResults} 
+                            />
                         </div>
                     </div>
                 </section>
@@ -74,274 +140,5 @@ const ProductListingPage = (initialFacetIds, initialSort, itemsPerPage, starting
         </section>
     );
 }
-
-// TODO: this needs to come from data
-// const facets = [
-//     {
-//         id: '100000',
-//         label: 'Brand',
-//         isOpen: true,
-//         isFilterable: true,
-//         filterLabelText: 'Search Brands',
-//         seeAll: 'brands',
-//         refinements: [
-//             {
-//                 id: '100001',
-//                 label: 'AGV Helmets',
-//                 count: 62,
-//                 isEnabled: true,
-//                 isSelected: false
-//             },
-//             {
-//                 id: '100002',
-//                 label: 'Bell Powersports',
-//                 count: 79,
-//                 isEnabled: true,
-//                 isSelected: false
-//             },
-//             {
-//                 id: '100003',
-//                 label: 'Biltwell',
-//                 count: 15,
-//                 isEnabled: true,
-//                 isSelected: false
-//             },
-//             {
-//                 id: '100004',
-//                 label: 'Fly Racing',
-//                 count: 9,
-//                 isEnabled: true,
-//                 isSelected: false
-//             },
-//             {
-//                 id: '100005',
-//                 label: 'HJC Helmets',
-//                 count: 65,
-//                 isEnabled: true,
-//                 isSelected: false
-//             },
-//             {
-//                 id: '100006',
-//                 label: 'Icon',
-//                 count: 71,
-//                 isEnabled: true,
-//                 isSelected: false
-//             },
-//             {
-//                 id: '100007',
-//                 label: 'Klim',
-//                 count: 2,
-//                 isEnabled: true,
-//                 isSelected: false
-//             },
-//             {
-//                 id: '100008',
-//                 label: 'Nexx',
-//                 count: 28,
-//                 isEnabled: true,
-//                 isSelected: false
-//             },
-//             {
-//                 id: '100009',
-//                 label: 'RSD',
-//                 count: 1,
-//                 isEnabled: true,
-//                 isSelected: false
-//             },
-//             {
-//                 id: '100010',
-//                 label: 'Ruby Helmets',
-//                 count: 18,
-//                 isEnabled: true,
-//                 isSelected: false
-//             }
-//         ]
-//     },
-//     {
-//         id: '200000',
-//         label: 'Customer Ratings',
-//         isOpen: false,
-//         isFilterable: false,
-//         filterLabelText: '',
-//         seeAll: '',
-//         refinements: [
-//             {
-//                 id: '200001',
-//                 label: '5 Only',
-//                 count: 200,
-//                 isEnabled: true,
-//                 isSelected: false,
-//                 rating: 10
-//             },
-//             {
-//                 id: '200002',
-//                 label: '4 & up',
-//                 count: 300,
-//                 isEnabled: true,
-//                 isSelected: false,
-//                 rating: 8
-//             },
-//             {
-//                 id: '200003',
-//                 label: '3 & up',
-//                 count: 400,
-//                 isEnabled: true,
-//                 isSelected: false,
-//                 rating: 6
-//             },
-//             {
-//                 id: '200004',
-//                 label: '2 & up',
-//                 count: 600,
-//                 isEnabled: true,
-//                 isSelected: false,
-//                 rating: 4
-//             },
-//             {
-//                 id: '200005',
-//                 label: '1 & up',
-//                 count: 750,
-//                 isEnabled: true,
-//                 isSelected: false,
-//                 rating: 2
-//             }
-//         ]
-//     },
-//     {
-//         id: '300000',
-//         label: 'Color',
-//         isOpen: false,
-//         isFilterable: false,
-//         filterLabelText: '',
-//         seeAll: '',
-//         refinements: [
-//             {
-//                 id: '300001',
-//                 label: 'Gloss Black',
-//                 count: 600,
-//                 isEnabled: true,
-//                 isSelected: false
-//             },
-//             {
-//                 id: '300002',
-//                 label: 'Matte Black',
-//                 count: 500,
-//                 isEnabled: true,
-//                 isSelected: false
-//             },
-//             {
-//                 id: '300003',
-//                 label: 'Red',
-//                 count: 224,
-//                 isEnabled: true,
-//                 isSelected: false
-//             },
-//             {
-//                 id: '300004',
-//                 label: 'Blue',
-//                 count: 173,
-//                 isEnabled: true,
-//                 isSelected: false
-//             },
-//             {
-//                 id: '300005',
-//                 label: 'White',
-//                 count: 497,
-//                 isEnabled: true,
-//                 isSelected: false
-//             },
-//             {
-//                 id: '300006',
-//                 label: 'Green',
-//                 count: 84,
-//                 isEnabled: true,
-//                 isSelected: false
-//             }
-//         ]
-//     },
-//     {
-//         id: '400000',
-//         label: 'Price Rage',
-//         isOpen: false,
-//         isFilterable: false,
-//         filterLabelText: '',
-//         seeAll: '',
-//         refinements: [
-//             {
-//                 id: '400001',
-//                 label: '$0 - $200',
-//                 count: 97,
-//                 isEnabled: true,
-//                 isSelected: false
-//             },
-//             {
-//                 id: '400002',
-//                 label: '$201 - $400',
-//                 count: 134,
-//                 isEnabled: true,
-//                 isSelected: false
-//             },
-//             {
-//                 id: '400003',
-//                 label: '$401 - $600',
-//                 count: 425,
-//                 isEnabled: true,
-//                 isSelected: false
-//             },
-//             {
-//                 id: '400004',
-//                 label: '$601 - $800',
-//                 count: 233,
-//                 isEnabled: true,
-//                 isSelected: false
-//             },
-//             {
-//                 id: '400005',
-//                 label: '> $800',
-//                 count: 2,
-//                 isEnabled: true,
-//                 isSelected: false
-//             }
-//         ]
-//     },
-//     {
-//         id: '500000',
-//         label: 'More Ways to Shop',
-//         isOpen: false,
-//         isFilterable: false,
-//         filterLabelText: '',
-//         seeAll: '',
-//         refinements: [
-//             {
-//                 id: '500001',
-//                 label: 'New Arrivals',
-//                 count: 28,
-//                 isEnabled: true,
-//                 isSelected: false
-//             },
-//             {
-//                 id: '500002',
-//                 label: 'On Sale',
-//                 count: 175,
-//                 isEnabled: true,
-//                 isSelected: false
-//             },
-//             {
-//                 id: '500003',
-//                 label: 'Open Box',
-//                 count: 97,
-//                 isEnabled: true,
-//                 isSelected: false
-//             },
-//             {
-//                 id: '500004',
-//                 label: 'Restock',
-//                 count: 42,
-//                 isEnabled: true,
-//                 isSelected: false
-//             }
-//         ]
-//     }
-// ]
 
 export default ProductListingPage;

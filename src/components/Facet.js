@@ -1,5 +1,4 @@
 import './Facet.scss';
-
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import FacetRefinement from './FacetRefinement';
 
@@ -24,6 +23,8 @@ const Facet = ({ facet, onSelectionsChanged }) => {
         let refinementsListHeight = isOpen ? refinementsList.current.offsetHeight : 0;
         let searchHeight = isOpen && facet.isFilterable ? 45 : 0;
 
+        console.log('facet open', isOpen, refinementsListHeight);
+
         return `${baseFacetHeight + refinementsListHeight + searchHeight}px`;
     }, [isOpen, facet.isFilterable]);
 
@@ -35,7 +36,7 @@ const Facet = ({ facet, onSelectionsChanged }) => {
     // set and render facet search if applicable
     if (facet.isFilterable) {
         facetSearch = 
-            <div data-facet-search className="facet_search">
+            <div className="facet_search">
                 <input 
                     type="text" 
                     placeholder={facet.filterLabelText}

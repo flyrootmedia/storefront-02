@@ -1,5 +1,4 @@
 import './ProductCardImage.scss';
-
 import React from 'react';
 
 const ProductCardImage = ({detailURL, imageURL, altText}) => {
@@ -7,7 +6,7 @@ const ProductCardImage = ({detailURL, imageURL, altText}) => {
     return (
         <div className="product-card-image">
             <a href={detailURL}>
-                <img data-product-image data-js="lazyload" src={imageURL} alt={altText} />
+                <img data-js="lazyload" src={imageURL} alt={altText} />
             </a>
         </div>
     );

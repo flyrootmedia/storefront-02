@@ -5,8 +5,8 @@ const PageHeader = ({ headerText, itemCount }) => {
 
     return (
         <h1 className="page-header small-screen-padding">
-            <span data-plp-title>{headerText} </span> 
-            {itemCount ? <span data-item-count className="page-header_item-count">({itemCount} {itemCountLabel})</span> : ''}
+            <span>{headerText} </span> 
+            {itemCount ? <span className="page-header_item-count">({itemCount} {itemCountLabel})</span> : ''}
         </h1>
     );
 }

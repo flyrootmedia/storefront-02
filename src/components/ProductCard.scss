@@ -7,6 +7,7 @@ $vertical-spacing: 10px;
 .product-card {
     @include rounded (4px);
     border: 1px solid $color-gray-four;
+    min-width: 0; // hack to prevent sticker ellipsis from pushing out the grid width
     padding: 5px 5px 14px 5px;
     @include shadow(0, 0, 6px, rgba(0,0,0,0.1));
     text-align: left;

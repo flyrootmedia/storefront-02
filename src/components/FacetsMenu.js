@@ -1,22 +1,28 @@
 import './FacetsMenu.scss';
-
-import React from 'react';
+import React, { useState } from 'react';
 import Facet from './Facet';
 
 const FacetsMenu = ({ facets, isOpen, onSelectionsChanged, onCloseClick }) => {
+    const [isApplyEnabled, setIsApplyEnabled] = useState(true);
+
+    const onRefinementSelectionsChanged = (paramToChange, changedParamValue, isSelected) => {
+        setIsApplyEnabled(false);
+        onSelectionsChanged(paramToChange, changedParamValue, isSelected);
+    };
+
     // render the facets list
     const renderedFacets = facets.map((facet) => {
         return (
             <Facet 
                 key={facet.id} 
                 facet={facet} 
-                onSelectionsChanged={onSelectionsChanged} 
+                onSelectionsChanged={onRefinementSelectionsChanged} 
             />
         );
     });
 
     return (
-        <div className={`facets-menu ${isOpen ? '-open' : ''}`} data-facets-wrap>
+        <div className={`facets-menu ${isOpen ? '-open' : ''}`}>
             <div className="facets-menu_facets">
                 <h2>Filter Results By:</h2>
                 <button 
@@ -31,7 +37,7 @@ const FacetsMenu = ({ facets, isOpen, onSelectionsChanged, onCloseClick }) => {
                 <button 
                     type="button" 
                     className="facets-menu_facets-apply btn -primary" 
-                    disabled 
+                    disabled={isApplyEnabled}
                     onClick={onCloseClick}>
                         Apply Selections
                 </button>

@@ -1,14 +1,11 @@
 import './StyledButton.scss';
-
 import React from 'react';
 
-const StyledButton = ({cssClass, dataJS, dataValue, isDisabled, isIconBtn, btnText, onClick }) => {
+const StyledButton = ({cssClass, isDisabled, isIconBtn, btnText, onClick }) => {
     return (
         <button 
             type="button" 
-            className={`styled-button ${cssClass}`} 
-            data-value={dataValue}
-            data-js={dataJS} 
+            className={`styled-button ${cssClass}`}
             disabled={isDisabled} 
             onClick={onClick}>
                 {isIconBtn ? <span className="screen-reader-only">{btnText}</span> : btnText}
