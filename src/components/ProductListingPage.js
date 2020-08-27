@@ -1,5 +1,5 @@
 import './ProductListingPage.scss';
-import React, {useState, useEffect, useCallback, useRef} from 'react';
+import React, {useState, useCallback, useRef} from 'react';
 import Breadcrumbs from './Breadcrumbs';
 import PageHeader from './PageHeader';
 import AppliedFacets from './AppliedFacets';
@@ -21,12 +21,10 @@ const ProductListingPage = ({initialFacetIds, initialSort, itemsPerPage, startin
 
     // callback to update results when refinement selections change
     const requestNewPlpResults = useCallback((paramToChange, changedParamValue, isSelected) => {
-        console.log('request from callback:', paramToChange, changedParamValue, isSelected);
-
         let requestRefinements = plpEl.current.facetIds ? plpEl.current.facetIds : initialFacetIds;
         let requestSort = plpEl.current.sort ? plpEl.current.sort : initialSort;
         let requestItemsPerPage = plpEl.current.itemsPerPage ? plpEl.current.itemsPerPage : itemsPerPage;
-        let requestPageIndex = plpEl.current.pageIndex ? plpEl.current.pageIndex : startingPageIndex;
+        let requestPageIndex = 0; // always reset the page start index on filtering/sorting
         let requestPath = isSelected ? '/apis/plpFiltered.json' : '/apis/plp.json';
 
         switch (paramToChange) {
@@ -73,10 +71,6 @@ const ProductListingPage = ({initialFacetIds, initialSort, itemsPerPage, startin
         );
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [initialFacetIds, initialSort, itemsPerPage, startingPageIndex]);
-
-    useEffect(() => {
-        console.log('plpResults loaded');
-    }, [plpResults]);
 
     // opens the facets menu overlay at mobile sizes
     const onFacetsOpenClick = (event) => {

@@ -1,5 +1,5 @@
 import './AlertBox.scss';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import StyledButton from './StyledButton';
 
 const AlertBox = ({ cssClass, isDismissable, children }) => {

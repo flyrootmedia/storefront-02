@@ -1,8 +1,25 @@
-import React from 'react';
+import './FacetSearch.scss';
+import React, { useState, useEffect } from 'react';
 
-const FacetSearch = () => {
+const FacetSearch = ({ placeholderText, onFiltering}) => {
+    // state
+    const [facetSearchTerm, setFacetSearchTerm] = useState('');
+
+    // update search terms
+    useEffect(() => {
+        onFiltering(facetSearchTerm.toLowerCase());
+    }, [facetSearchTerm, onFiltering]);
+
     return (
-        <div>FacetSearch</div>
+        <div className="facet-search">
+            <input 
+                type="text" 
+                placeholder={placeholderText}
+                value={facetSearchTerm}
+                onChange={e => setFacetSearchTerm(e.target.value)}>
+            </input>
+            <i className="fas fa-search"></i>
+        </div>
     );
 }
 

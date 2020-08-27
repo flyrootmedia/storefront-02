@@ -1,0 +1,22 @@
+@import '../sass/shared/mixins';
+
+.facet-search {
+    position: relative;
+    margin: 10px 10px 0 10px;
+
+    input {
+        box-sizing: border-box;
+        @include calc(width, '100% - 20px');
+        height: 35px;
+        border: 1px solid $color-gray-four;
+        border-radius: 0;
+        padding: 0 35px 0 10px;
+    }
+
+    // font awesome search icon
+    .fas {
+        position: absolute;
+        top: 8px;
+        right: 30px;
+    }
+}

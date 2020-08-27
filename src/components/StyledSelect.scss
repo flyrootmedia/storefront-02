@@ -2,7 +2,6 @@
 
 // styles a label and select inside a div to look like a single element
 .styled-select {
-    //background-image: url($down-arrow-image);
     background-repeat: no-repeat;
 
     @include calc(background-position, '100% - 8px');

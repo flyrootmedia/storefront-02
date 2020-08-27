@@ -17,6 +17,8 @@ const usePlpResults = (selectedRefinements, sort, itemsPerPage, activePage, requ
     }, [selectedRefinements, sort, itemsPerPage, activePage, requestPath]);
 
     const plpRequest = async (facetsParam, sortParam, itemsPerPageParam, pageStartIndexParam, newRequestPath) => {
+        const query = `facets=${facetsParam}&sort=${sortParam}&itemsPerPage=${itemsPerPageParam}&pageStartIndex=${pageStartIndexParam}`;
+
         await plp.get(newRequestPath, {
             params: {
                 facets: facetsParam,
@@ -25,11 +27,15 @@ const usePlpResults = (selectedRefinements, sort, itemsPerPage, activePage, requ
                 pageStartIndex: pageStartIndexParam
             },
             paramsSerializer: params => {
-                return `facets=${facetsParam}&sort=${sortParam}&itemsPerPage=${itemsPerPageParam}&pageStartIndex=${pageStartIndexParam}`; 
+                return query; 
             }
         })
         .then(response => {
             setPlpResults(response.data);
+
+            window.history.pushState({}, '', `?${query}`);
+            const navEvent = new PopStateEvent('popstate');
+            window.dispatchEvent(navEvent);
         })
         .catch( error => {
             alert(`There was an error loading the requested results: ${error}`);

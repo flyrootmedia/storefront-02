@@ -6,17 +6,14 @@ import StyledSelect from './StyledSelect';
 const ProductsPagination = ({ pagination, onPaginationChanged }) => {
 
     const onPreviousClick = (event) => {
-        console.log('previous button clicked', pagination.previousPageStartIndex);
         onPaginationChanged('pageNum', pagination.previousPageStartIndex, null);
     };
 
     const onNextClick = (event) => {
-        console.log('next button clicked', pagination.nextPageStartIndex);
         onPaginationChanged('pageNum', pagination.nextPageStartIndex, null);
     };
 
     const onPageChange = (event) => {
-        console.log('new page selected', event.target.value);
         onPaginationChanged('pageNum', event.target.value, null);
     };
 

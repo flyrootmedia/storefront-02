@@ -1,6 +1,7 @@
 import './Facet.scss';
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import FacetRefinement from './FacetRefinement';
+import FacetSearch from './FacetSearch';
 
 const Facet = ({ facet, onSelectionsChanged }) => {
     // consts/vars
@@ -9,57 +10,57 @@ const Facet = ({ facet, onSelectionsChanged }) => {
     let seeAll = '';
 
     // state
-    const [facetSearchTerm, setFacetSearchTerm] = useState('');
     const [isOpen, setIsOpen] = useState(facet.isOpen);
     const [facetHeight, setFacetHeight] = useState(`${baseFacetHeight}px`);
+    const [facetSearchTerm, setFacetSearchTerm] = useState('');
 
     // refs
     const refinementsList = useRef(null);
 
     // gets the facet height based on whether or not the facet is open, and based on the
-    // existence of the search bar. NOTE: needed to use "useCallback" to avoid missing dependency issue
-    // and recreating the function on every render
+    // existence of the search bar and whether user is searching. NOTE: needed to use "useCallback" to 
+    // avoid missing dependency issue and recreating the function on every render
     const getFacetHeight = useCallback(() => {
         let refinementsListHeight = isOpen ? refinementsList.current.offsetHeight : 0;
         let searchHeight = isOpen && facet.isFilterable ? 45 : 0;
 
-        //console.log('facet open', isOpen, refinementsListHeight);
-
         return `${baseFacetHeight + refinementsListHeight + searchHeight}px`;
     }, [isOpen, facet.isFilterable]);
 
-    // set/update the open state
+    // set/update the height when opening/closing or searching
     useEffect(() => {
         setFacetHeight(getFacetHeight());
-    }, [isOpen, getFacetHeight]);
+    }, [isOpen, facetSearchTerm, getFacetHeight]);
 
     // set and render facet search if applicable
     if (facet.isFilterable) {
         facetSearch = 
-            <div className="facet_search">
-                <input 
-                    type="text" 
-                    placeholder={facet.filterLabelText}
-                    value={facetSearchTerm}
-                    onChange={e => setFacetSearchTerm(e.target.value)}>
-                </input>
-                <i className="fas fa-search"></i>
-            </div>
+            <FacetSearch
+                placeholderText={facet.filterLabelText}
+                onFiltering={(facetSearchTerm) => setFacetSearchTerm(facetSearchTerm)}
+            />
     }
 
     // render the list of refinements
     const renderedRefinements = facet.refinements.map((refinement) => {
+        let isVisible = true;
+
+        if (facet.isFilterable && facetSearchTerm) {
+            isVisible = refinement.label.toLowerCase().indexOf(facetSearchTerm) > -1;
+        }
+
         return (
             <FacetRefinement 
                 key={refinement.id} 
                 refinement={refinement} 
                 onSelectionsChanged={onSelectionsChanged}
+                isVisible={isVisible}
             />
         );
     });
 
-    // TODO: load refinements on "see all" click
     const onSeeAllClick = (seeAllType) => {
+        // TODO: load refinements on "see all" click
         console.log('see all clicked:', seeAllType);
     };
 
@@ -77,8 +78,7 @@ const Facet = ({ facet, onSelectionsChanged }) => {
         <div className={`facet ${isOpen ? '-open' : ''}`} style={{height: facetHeight}}>
             <button 
                 className="facet_header" 
-                onClick={() => setIsOpen(!isOpen)}
-            >
+                onClick={() => setIsOpen(!isOpen)}>
                     {facet.label}
             </button>
             {facetSearch}

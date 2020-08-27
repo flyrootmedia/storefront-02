@@ -1,9 +1,10 @@
 import './FacetRefinement.scss';
 import React from 'react';
 
-const FacetRefinement = ({ refinement, onSelectionsChanged }) => {
+const FacetRefinement = ({ refinement, isVisible, onSelectionsChanged }) => {
     // render the rating stars if applicable
     let refinementRating = '';
+    let style = isVisible ? {display: 'flex'} : {display: 'none'};
 
     if (refinement.rating) {
         refinementRating = 
@@ -16,6 +17,7 @@ const FacetRefinement = ({ refinement, onSelectionsChanged }) => {
     return (
         <button 
             type="button"
+            style={style}
             disabled={refinement.isEnabled ? false : true} 
             className={`facet-refinement ${refinement.isSelected ? '-selected' : ''}`} 
             onClick={() => onSelectionsChanged('refinements', refinement.id, !refinement.isSelected)}
