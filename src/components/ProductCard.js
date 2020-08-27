@@ -1,5 +1,5 @@
 import './ProductCard.scss';
-import React from 'react';
+import React, { useState } from 'react';
 import ProductSticker from './ProductSticker';
 import ProductCardImage from './ProductCardImage';
 import ProductCardStyles from './ProductCardStyles';
@@ -7,6 +7,13 @@ import ProductRatings from './ProductRatings';
 import ProductPrice from './ProductPrice';
 
 const ProductCard = ({ product }) => {
+
+    const [productImage, setProductImage] = useState(product.image.url);
+
+    const updateProductCardImage = (imageURL) => {
+        setProductImage(imageURL);
+    };
+
     return (
         <div className="product-card">
             <div className="product-card_sticker">
@@ -18,11 +25,12 @@ const ProductCard = ({ product }) => {
             <div className="product-card_content">
                 <ProductCardImage 
                     detailURL={product.defaultSkuURL} 
-                    imageURL={product.image.url} 
+                    imageURL={productImage} 
                     altText={product.image.altText}
                 />
                 <ProductCardStyles
                     styles={product.styles}
+                    onLinkHover={updateProductCardImage}
                 />
                 <div className="product-card_title">
                     <a href="/">

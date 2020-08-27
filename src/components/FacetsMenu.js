@@ -21,6 +21,7 @@ const FacetsMenu = ({ facets, isOpen, onSelectionsChanged, onCloseClick }) => {
         );
     });
 
+    // TODO: replade buttons with "StyledButton" and give configurable size class
     return (
         <div className={`facets-menu ${isOpen ? '-open' : ''}`}>
             <div className="facets-menu_facets">

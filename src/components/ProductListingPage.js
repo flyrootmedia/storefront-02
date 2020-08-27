@@ -8,6 +8,7 @@ import FacetsOpen from './FacetsOpen';
 import ProductsSort from './ProductsSort';
 import ProductsGrid from './ProductsGrid';
 import ProductsPagination from './ProductsPagination';
+import AlertBox from './AlertBox';
 import usePlpResults from '../hooks/usePlpResults';
 
 const ProductListingPage = ({initialFacetIds, initialSort, itemsPerPage, startingPageIndex}) => {
@@ -101,7 +102,8 @@ const ProductListingPage = ({initialFacetIds, initialSort, itemsPerPage, startin
                     headerText={plpResults.pageHeader}
                     itemCount={plpResults.itemCount}
                 />
-                <div className="small-screen-padding">
+
+                <AlertBox isDismissable={true}>
                     <p><strong>NOTE:</strong> This app is currently set up with hardcoded test JSON for the different user selections, so there&rsquo;s only
                     one set of data you&rsquo;ll see change when selecting a filter, a new sort, or changing the pagination. To see it behave
                     somewhat as expected, use the following:</p>
@@ -110,7 +112,8 @@ const ProductListingPage = ({initialFacetIds, initialSort, itemsPerPage, startin
                         <li>For sorting, select "$ (High - Low)" then back to "Featured"</li>
                         <li>For pagination, click the "next" button or select page 5, then go back to page 1</li>
                     </ol>
-                </div>
+                </AlertBox>
+                
                 <section id="productsTools" className="products-tools">
                     <AppliedFacets />
                     <FacetsMenu 

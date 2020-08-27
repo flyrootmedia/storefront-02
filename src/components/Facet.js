@@ -23,7 +23,7 @@ const Facet = ({ facet, onSelectionsChanged }) => {
         let refinementsListHeight = isOpen ? refinementsList.current.offsetHeight : 0;
         let searchHeight = isOpen && facet.isFilterable ? 45 : 0;
 
-        console.log('facet open', isOpen, refinementsListHeight);
+        //console.log('facet open', isOpen, refinementsListHeight);
 
         return `${baseFacetHeight + refinementsListHeight + searchHeight}px`;
     }, [isOpen, facet.isFilterable]);

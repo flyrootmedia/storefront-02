@@ -1,9 +1,31 @@
 import './ProductCardStyles.scss';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import ProductCardStylesThumb from './ProductCardStylesThumb';
 
-const ProductCardStyles = ({ styles }) => {
-    // TODO: lazy load with data-src
+const ProductCardStyles = ({ styles, onLinkHover }) => {
+    // state
+    const [selectedIndex, setSelectedIndex] = useState(0);
+
+    // consts/vars
     const moreStyles = styles.length - 5;
+
+    // set initial selected style on first render
+    useEffect(() => {
+        // NOTE: is this overkill? Would we ever really select any style other 
+        // than the first one on the initial load?
+        for (let i=0; i < styles.length; i++) {
+            if (styles[i].selected) {
+                setSelectedIndex(i);
+                return;
+            }
+        }
+    }, [styles]);
+
+    const updateSelectedThumbAndImage = (imageURL, hoveredIndex) => {
+        let newMainImage = imageURL.replace('80x80', '480x480');
+        onLinkHover(newMainImage);
+        setSelectedIndex(hoveredIndex);
+    };
     
     const renderedStyles = styles.map((style, index) => {
         // show no more than 5 styles
@@ -17,15 +39,18 @@ const ProductCardStyles = ({ styles }) => {
         }
 
         return (
-            <a key={style.altText} className={style.selected ? 'selected' : ''} href={style.linkURL}>
-                <img data-js="lazyload" src={style.imageURL} alt={style.altText} />
-            </a>
+            <ProductCardStylesThumb
+                key={style.altText} 
+                style={style} 
+                selectedIndex={selectedIndex}
+                index={index}
+                onMouseEnter={() => updateSelectedThumbAndImage(style.imageURL, index)}
+            />
         );
     });
 
     return (
         <div className="product-card-styles">
-            {/* TODO: wire up hovers */}
             <div className="product-card-styles_thumbs hide-scrollbars">
                 {renderedStyles}
             </div>
