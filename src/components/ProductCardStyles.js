@@ -11,14 +11,12 @@ const ProductCardStyles = ({ styles, onLinkHover }) => {
 
     // set initial selected style on first render
     useEffect(() => {
-        // NOTE: is this overkill? Would we ever really select any style other 
-        // than the first one on the initial load?
-        for (let i=0; i < styles.length; i++) {
-            if (styles[i].selected) {
-                setSelectedIndex(i);
-                return;
-            }
-        }
+        let selectedStyleIndex = styles.findIndex((style) => {
+            return style.selected;
+        });
+
+        setSelectedIndex(selectedStyleIndex);
+
     }, [styles]);
 
     const updateSelectedThumbAndImage = (imageURL, hoveredIndex) => {
