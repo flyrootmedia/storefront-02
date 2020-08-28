@@ -3,9 +3,9 @@
 
 // background overlay for all facets
 .facets-menu {
-    display: none; // hidden by default
+    opacity: 0;
     position: fixed;
-    z-index: 100;
+    z-index: -1;
     overflow: hidden;
     top: 0;
     right: 0;
@@ -17,7 +17,8 @@
 
     // facets menu is open
     &.-open {
-        display: block;
+        opacity: 1;
+        z-index: 100;
     }
 
     // all facets
@@ -60,7 +61,8 @@
 @include large-screen-up {
     // background overlay for all facets
     .facets-menu {
-        display: block;
+        opacity: 1;
+        z-index: 0;
         position: static;
         padding: 0 0 0 $content-horizontal-spacing;
         margin: 0;
