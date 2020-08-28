@@ -1,13 +1,9 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
 
 const usePlpSeeAll = (requestPath) => {
 
     const [seeAllResults, setSeeAllResults] = useState({});
-
-    const seeAll = axios.create({
-        baseURL: 'http://localhost:3000/'
-    });
+    const baseURL = 'http://localhost:3000/'
 
     useEffect(() => {
         if (requestPath) {
@@ -17,14 +13,19 @@ const usePlpSeeAll = (requestPath) => {
     }, [requestPath]);
 
     const seeAllRequest = async (newRequestPath) => {
-        await seeAll
-            .get(newRequestPath)
-            .then(response => {
-                setSeeAllResults(response.data);
-            })
-            .catch( error => {
-                alert(`There was an error loading the refinements: ${error}`);
-            });
+        try {
+            let url = new URL(`${baseURL}${newRequestPath}`);
+            let response = await fetch (url, { method: 'GET' });
+
+            if (!response.ok) {
+                throw new Error(`There was an error loading the refinements. status: ${response.status}`);
+            } else {
+                let data = await response.json();
+                setSeeAllResults(data);
+            }
+        } catch (error) {
+            alert(`There was an error loading the refinements: ${error}`)
+        }
     };
 
     return [seeAllResults, seeAllRequest];
