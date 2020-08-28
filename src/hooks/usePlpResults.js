@@ -26,7 +26,7 @@ const usePlpResults = (selectedRefinements, sort, itemsPerPage, activePage, requ
                 itemsPerPage: itemsPerPageParam,
                 pageStartIndex: pageStartIndexParam
             },
-            paramsSerializer: params => {
+            paramsSerializer: () => {
                 return query; 
             }
         })

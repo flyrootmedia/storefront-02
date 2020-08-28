@@ -1,9 +1,19 @@
+/*
+    BUGS/TODOS: 
+    - figure out why there appear to be multiple renders of this component on initial load
+    - figure out why "see all" state doesn't get reset after loading filtered results (the "see all" button remains hidden)
+    - reset the height when results are loaded
+    - fix issue with open facet height when the page loads at mobile sizes and the menu is hidden
+*/
+
+
 import './Facet.scss';
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import FacetRefinement from './FacetRefinement';
 import FacetSearch from './FacetSearch';
+import usePlpSeeAll from '../hooks/usePlpSeeAll';
 
-const Facet = ({ facet, onSelectionsChanged }) => {
+const Facet = ({ facet, isFacetsMenuOpen, onSelectionsChanged }) => {
     // consts/vars
     const baseFacetHeight = 46;
     let facetSearch = '';
@@ -11,8 +21,10 @@ const Facet = ({ facet, onSelectionsChanged }) => {
 
     // state
     const [isOpen, setIsOpen] = useState(facet.isOpen);
+    const [allLoaded, setAllLoaded] = useState(!facet.seeAll);
     const [facetHeight, setFacetHeight] = useState(`${baseFacetHeight}px`);
     const [facetSearchTerm, setFacetSearchTerm] = useState('');
+    const [seeAllResults, seeAllRequest] = usePlpSeeAll();
 
     // refs
     const refinementsList = useRef(null);
@@ -23,14 +35,13 @@ const Facet = ({ facet, onSelectionsChanged }) => {
     const getFacetHeight = useCallback(() => {
         let refinementsListHeight = isOpen ? refinementsList.current.offsetHeight : 0;
         let searchHeight = isOpen && facet.isFilterable ? 45 : 0;
-
         return `${baseFacetHeight + refinementsListHeight + searchHeight}px`;
     }, [isOpen, facet.isFilterable]);
 
     // set/update the height when opening/closing or searching
     useEffect(() => {
         setFacetHeight(getFacetHeight());
-    }, [isOpen, facetSearchTerm, getFacetHeight]);
+    }, [isOpen, facetSearchTerm, allLoaded, isFacetsMenuOpen, getFacetHeight]);
 
     // set and render facet search if applicable
     if (facet.isFilterable) {
@@ -40,6 +51,11 @@ const Facet = ({ facet, onSelectionsChanged }) => {
                 onFiltering={(facetSearchTerm) => setFacetSearchTerm(facetSearchTerm)}
             />
     }
+
+    const onRefinementClick = (paramToChange, changedParamValue, isSelected) => {
+        onSelectionsChanged(paramToChange, changedParamValue, isSelected);
+        //setAllLoaded(false);
+    };
 
     // render the list of refinements
     const renderedRefinements = facet.refinements.map((refinement) => {
@@ -53,19 +69,28 @@ const Facet = ({ facet, onSelectionsChanged }) => {
             <FacetRefinement 
                 key={refinement.id} 
                 refinement={refinement} 
-                onSelectionsChanged={onSelectionsChanged}
+                onSelectionsChanged={(paramToChange, changedParamValue, isSelected) => onRefinementClick(paramToChange, changedParamValue, isSelected)}
                 isVisible={isVisible}
             />
         );
     });
 
-    const onSeeAllClick = (seeAllType) => {
-        // TODO: load refinements on "see all" click
-        console.log('see all clicked:', seeAllType);
-    };
+    useEffect(() => {
+        if (seeAllResults.refinements) {
+            // this direct assignment feels like an anti-pattern, but I tried using state and it broke the isSelected value for some reason
+            facet.refinements = seeAllResults.refinements;
+            setAllLoaded(true);
+        }
+    }, [seeAllResults, facet.refinements]);
+
+    const onSeeAllClick = useCallback((seeAllType) => {
+        // NOTE: customize this by "seeAllType" if needs more than brands
+        let requestPath = '/apis/plpSeeAllBrands.json';
+        seeAllRequest(requestPath);
+    }, [seeAllRequest]);
 
     // render the "see all" button if applicable
-    if (facet.seeAll) {
+    if (facet.seeAll && !allLoaded) {
         seeAll = 
             <button 
                 className="-see-all link-btn"

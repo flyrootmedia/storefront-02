@@ -1,0 +1,193 @@
+{
+    "refinements": [
+        {
+            "id": "100001",
+            "label": "6D Helmets",
+            "count": 7,
+            "isEnabled": true,
+            "isSelected": false
+        },
+        {
+            "id": "100002",
+            "label": "AGV Helmets",
+            "count": 62,
+            "isEnabled": true,
+            "isSelected": false
+        },
+        {
+            "id": "100003",
+            "label": "Arai Helmets",
+            "count": 87,
+            "isEnabled": true,
+            "isSelected": false
+        },
+        {
+            "id": "100004",
+            "label": "Bell Powersports",
+            "count": 81,
+            "isEnabled": true,
+            "isSelected": false
+        },
+        {
+            "id": "100005",
+            "label": "Bilt",
+            "count": 12,
+            "isEnabled": true,
+            "isSelected": false
+        },
+        {
+            "id": "100006",
+            "label": "Biltwell",
+            "count": 18,
+            "isEnabled": true,
+            "isSelected": false
+        },
+        {
+            "id": "100007",
+            "label": "Fly Racing Street",
+            "count": 9,
+            "isEnabled": true,
+            "isSelected": false
+        },
+        {
+            "id": "100008",
+            "label": "GMAX Helmets",
+            "count": 24,
+            "isEnabled": true,
+            "isSelected": false
+        },
+        {
+            "id": "100009",
+            "label": "HJC Helmets",
+            "count": 70,
+            "isEnabled": true,
+            "isSelected": false
+        },
+        {
+            "id": "100010",
+            "label": "Icon",
+            "count": 72,
+            "isEnabled": true,
+            "isSelected": false
+        },
+        {
+            "id": "100011",
+            "label": "Klim",
+            "count": 3,
+            "isEnabled": true,
+            "isSelected": false
+        },
+        {
+            "id": "100012",
+            "label": "LS2 Helmets",
+            "count": 50,
+            "isEnabled": true,
+            "isSelected": false
+        },
+        {
+            "id": "100013",
+            "label": "Nexx Helmets",
+            "count": 29,
+            "isEnabled": true,
+            "isSelected": false
+        },
+        {
+            "id": "100014",
+            "label": "Nolan Helmets",
+            "count": 6,
+            "isEnabled": true,
+            "isSelected": false
+        },
+        {
+            "id": "100015",
+            "label": "RSD",
+            "count": 1,
+            "isEnabled": true,
+            "isSelected": false
+        },
+        {
+            "id": "100016",
+            "label": "Ruby Helmets",
+            "count": 18,
+            "isEnabled": true,
+            "isSelected": false
+        },
+        {
+            "id": "100017",
+            "label": "Schuberth Helmets",
+            "count": 18,
+            "isEnabled": true,
+            "isSelected": false
+        },
+        {
+            "id": "100018",
+            "label": "Scorpion",
+            "count": 38,
+            "isEnabled": true,
+            "isSelected": false
+        },
+        {
+            "id": "100019",
+            "label": "Sedici",
+            "count": 15,
+            "isEnabled": true,
+            "isSelected": false
+        },
+        {
+            "id": "100020",
+            "label": "Sena",
+            "count": 6,
+            "isEnabled": true,
+            "isSelected": false
+        },
+        {
+            "id": "100021",
+            "label": "Shark Helmets",
+            "count": 28,
+            "isEnabled": true,
+            "isSelected": false
+        },
+        {
+            "id": "100022",
+            "label": "Shoei Helmets",
+            "count": 55,
+            "isEnabled": true,
+            "isSelected": false
+        },
+        {
+            "id": "100023",
+            "label": "Simpson Helmets",
+            "count": 12,
+            "isEnabled": true,
+            "isSelected": false
+        },
+        {
+            "id": "100024",
+            "label": "Speed & Strength",
+            "count": 15,
+            "isEnabled": true,
+            "isSelected": false
+        },
+        {
+            "id": "100025",
+            "label": "Street & Steel",
+            "count": 1,
+            "isEnabled": true,
+            "isSelected": false
+        },
+        {
+            "id": "100026",
+            "label": "Suomy",
+            "count": 2,
+            "isEnabled": true,
+            "isSelected": false
+        },
+        {
+            "id": "100027",
+            "label": "X-Lite Helmets",
+            "count": 6,
+            "isEnabled": true,
+            "isSelected": false
+        }
+    ]
+}

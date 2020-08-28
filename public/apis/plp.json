@@ -413,71 +413,71 @@
             "refinements": [
                 {
                     "id": "100001",
+                    "label": "6D Helmets",
+                    "count": 7,
+                    "isEnabled": true,
+                    "isSelected": false
+                },
+                {
+                    "id": "100002",
                     "label": "AGV Helmets",
                     "count": 62,
                     "isEnabled": true,
                     "isSelected": false
                 },
                 {
-                    "id": "100002",
-                    "label": "Bell Powersports",
-                    "count": 79,
-                    "isEnabled": true,
-                    "isSelected": false
-                },
-                {
                     "id": "100003",
-                    "label": "Biltwell",
-                    "count": 15,
+                    "label": "Arai Helmets",
+                    "count": 87,
                     "isEnabled": true,
                     "isSelected": false
                 },
                 {
                     "id": "100004",
-                    "label": "Fly Racing",
-                    "count": 9,
+                    "label": "Bell Powersports",
+                    "count": 81,
                     "isEnabled": true,
                     "isSelected": false
                 },
                 {
                     "id": "100005",
-                    "label": "HJC Helmets",
-                    "count": 65,
+                    "label": "Bilt",
+                    "count": 12,
                     "isEnabled": true,
                     "isSelected": false
                 },
                 {
                     "id": "100006",
-                    "label": "Icon",
-                    "count": 71,
+                    "label": "Biltwell",
+                    "count": 18,
                     "isEnabled": true,
                     "isSelected": false
                 },
                 {
                     "id": "100007",
-                    "label": "Klim",
-                    "count": 2,
+                    "label": "Fly Racing Street",
+                    "count": 9,
                     "isEnabled": true,
                     "isSelected": false
                 },
                 {
                     "id": "100008",
-                    "label": "Nexx",
-                    "count": 28,
+                    "label": "GMAX Helmets",
+                    "count": 24,
                     "isEnabled": true,
                     "isSelected": false
                 },
                 {
                     "id": "100009",
-                    "label": "RSD",
-                    "count": 1,
+                    "label": "HJC Helmets",
+                    "count": 70,
                     "isEnabled": true,
                     "isSelected": false
                 },
                 {
                     "id": "100010",
-                    "label": "Ruby Helmets",
-                    "count": 18,
+                    "label": "Icon",
+                    "count": 72,
                     "isEnabled": true,
                     "isSelected": false
                 }

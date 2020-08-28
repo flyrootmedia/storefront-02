@@ -15,13 +15,14 @@ const FacetsMenu = ({ facets, isOpen, onSelectionsChanged, onCloseClick }) => {
         return (
             <Facet 
                 key={facet.id} 
-                facet={facet} 
+                facet={facet}
+                isFacetsMenuOpen={isOpen}
                 onSelectionsChanged={onRefinementSelectionsChanged} 
             />
         );
     });
 
-    // TODO: replade buttons with "StyledButton" and give configurable size class
+    // TODO: replace buttons with "StyledButton" and give configurable size class
     return (
         <div className={`facets-menu ${isOpen ? '-open' : ''}`}>
             <div className="facets-menu_facets">
