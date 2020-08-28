@@ -1,6 +1,7 @@
 import './GlobalNav.scss';
 import React from 'react';
 
+// TODO: make this data driven and create accordion module functionality
 const GlobalNav = ({ navIsOpen, setNavState }) => {
     return (
         <nav id="globalNav" className={`global-nav ${navIsOpen === true ? '-open' : '' }`}>
