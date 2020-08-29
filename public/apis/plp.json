@@ -3,6 +3,8 @@
     "itemCount": 750,
     "products": [
         {
+            "id": 1,
+            "facetIds": ["000000", "000001"],
             "productURL": "/",
             "defaultSkuURL": "/",
             "sticker": {
@@ -25,6 +27,8 @@
             }
         },
         {
+            "id": 2,
+            "facetIds": ["000000"],
             "productURL": "/",
             "defaultSkuURL": "/",
             "sticker": {
@@ -78,6 +82,8 @@
             }
         },
         {
+            "id": 3,
+            "facetIds": ["000000"],
             "productURL": "/",
             "defaultSkuURL": "/",
             "sticker": {
@@ -100,6 +106,8 @@
             }
         },
         {
+            "id": 4,
+            "facetIds": ["000000"],
             "productURL": "/",
             "defaultSkuURL": "/",
             "sticker": {
@@ -122,6 +130,8 @@
             }
         },
         {
+            "id": 5,
+            "facetIds": ["000000"],
             "productURL": "/",
             "defaultSkuURL": "/",
             "sticker": {
@@ -144,6 +154,8 @@
             }
         },
         {
+            "id": 6,
+            "facetIds": ["000000"],
             "productURL": "/",
             "defaultSkuURL": "/",
             "sticker": {
@@ -185,6 +197,8 @@
             }
         },
         {
+            "id": 7,
+            "facetIds": ["000000"],
             "productURL": "/",
             "defaultSkuURL": "/",
             "sticker": {
@@ -207,6 +221,8 @@
             }
         },
         {
+            "id": 8,
+            "facetIds": ["000000"],
             "productURL": "/",
             "defaultSkuURL": "/",
             "sticker": {
@@ -248,6 +264,8 @@
             }
         },
         {
+            "id": 9,
+            "facetIds": ["000000"],
             "productURL": "/",
             "defaultSkuURL": "/",
             "sticker": {
@@ -270,6 +288,8 @@
             }
         },
         {
+            "id": 10,
+            "facetIds": ["000000"],
             "productURL": "/",
             "defaultSkuURL": "/",
             "sticker": {
@@ -292,6 +312,8 @@
             }
         },
         {
+            "id": 11,
+            "facetIds": ["000000"],
             "productURL": "/",
             "defaultSkuURL": "/",
             "sticker": {
@@ -314,6 +336,8 @@
             }
         },
         {
+            "id": 12,
+            "facetIds": ["000000"],
             "productURL": "/",
             "defaultSkuURL": "/",
             "sticker": {
@@ -336,6 +360,8 @@
             }
         },
         {
+            "id": 13,
+            "facetIds": ["000000"],
             "productURL": "/",
             "defaultSkuURL": "/",
             "sticker": {
@@ -358,6 +384,8 @@
             }
         },
         {
+            "id": 14,
+            "facetIds": ["000000"],
             "productURL": "/",
             "defaultSkuURL": "/",
             "sticker": {
@@ -380,6 +408,8 @@
             }
         },
         {
+            "id": 15,
+            "facetIds": ["000000"],
             "productURL": "/",
             "defaultSkuURL": "/",
             "sticker": {
@@ -404,7 +434,8 @@
     ],
     "facets": [
         {
-            "id": "100000",
+            "id": 1,
+            "facetId": "100000",
             "label": "Brand",
             "isOpen": true,
             "isFilterable": true,
@@ -484,7 +515,8 @@
             ]
         },
         {
-            "id": "200000",
+            "id": 2,
+            "facetId": "200000",
             "label": "Customer Ratings",
             "isOpen": false,
             "isFilterable": false,
@@ -534,7 +566,8 @@
             ]
         },
         {
-            "id": "300000",
+            "id": 3,
+            "facetId": "300000",
             "label": "Color",
             "isOpen": false,
             "isFilterable": false,
@@ -586,7 +619,8 @@
             ]
         },
         {
-            "id": "400000",
+            "id": 4,
+            "facetId": "400000",
             "label": "Price Rage",
             "isOpen": false,
             "isFilterable": false,
@@ -631,7 +665,8 @@
             ]
         },
         {
-            "id": "500000",
+            "id": 5,
+            "facetId": "500000",
             "label": "More Ways to Shop",
             "isOpen": false,
             "isFilterable": false,
