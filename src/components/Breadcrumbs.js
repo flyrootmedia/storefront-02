@@ -5,7 +5,7 @@ const Breadcrumbs = () => {
     return (
         <ul className="breadcrumbs small-screen-padding">
             <li><a href="/">Home</a></li>
-            <li><a href="/plp.frm.html">Helmets</a></li>
+            <li><a href="/">Helmets</a></li>
             <li className="active">Full Face Helmets</li>
         </ul>
     );
