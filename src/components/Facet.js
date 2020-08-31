@@ -1,12 +1,3 @@
-/*
-    BUGS/TODOS: 
-    - figure out why there appear to be multiple renders of this component on initial load
-    - figure out why "see all" state doesn't get reset after loading filtered results (the "see all" button remains hidden)
-    - reset the height when results are loaded
-    - fix issue with open facet height when the page loads at mobile sizes and the menu is hidden
-*/
-
-
 import './Facet.scss';
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import FacetRefinement from './FacetRefinement';
@@ -77,7 +68,9 @@ const Facet = ({ facet, isFacetsMenuOpen, onSelectionsChanged }) => {
 
     useEffect(() => {
         if (seeAllResults.refinements) {
-            // this direct assignment feels like an anti-pattern, but I tried using state and it broke the isSelected value for some reason
+            // this direct assignment feels like an anti-pattern, but I tried using state 
+            // and it broke the isSelected value for some reason. Removed the see all property from the 
+            // brands facet for now since it isn't critical. Related issues #9 and #17 opened
             facet.refinements = seeAllResults.refinements;
             setAllLoaded(true);
         }

@@ -3,11 +3,18 @@
     "itemCount": 750,
     "products": [
         {
+            "id": 1,
+            "facetIds": [ 
+                "100023",
+                "300001",
+                "400002",
+                "500001"
+            ],
             "productURL": "/",
             "defaultSkuURL": "/",
             "sticker": {
                 "cssClass": "",
-                "stickerText": "New Arrival!"
+                "stickerText": "Featured New Arrival!"
             },
             "name": "Simpson Speed Bandit Helmet - Gloss Black",
             "image": {
@@ -20,16 +27,38 @@
                 "count": 0
             },
             "price": {
+                "lowPrice": 279.95,
+                "highPrice": 279.95,
                 "salePrice": "$279.95",
                 "wasPrice": ""
-            }
+            },
+            "isFeatured": true,
+            "isBestSeller": false,
+            "isNewArrival": true
         },
         {
+            "id": 2,
+            "facetIds": [
+                "100006", 
+                "200001", 
+                "200002", 
+                "200003", 
+                "200004", 
+                "200005",
+                "300001",
+                "300002",
+                "300003",
+                "300005",
+                "300006",
+                "400001",
+                "400002",
+                "500001"
+            ],
             "productURL": "/",
             "defaultSkuURL": "/",
             "sticker": {
                 "cssClass": "",
-                "stickerText": "New!"
+                "stickerText": "Featured"
             },
             "name": "Biltwell Gringo S ECE Helmet",
             "image": {
@@ -73,16 +102,32 @@
                 "count": 21
             },
             "price": {
-                "salePrice": "$219.95 - $229.95",
+                "lowPrice": 189.95,
+                "highPrice": 229.95,
+                "salePrice": "$189.95 - $229.95",
                 "wasPrice": ""
-            }
+            },
+            "isFeatured": true,
+            "isBestSeller": false,
+            "isNewArrival": false
         },
         {
+            "id": 3,
+            "facetIds": [
+                "100006", 
+                "200002", 
+                "200003", 
+                "200004", 
+                "200005",
+                "300003",
+                "400001",
+                "500002"
+            ],
             "productURL": "/",
             "defaultSkuURL": "/",
             "sticker": {
                 "cssClass": "-sale",
-                "stickerText": "On Sale Now!"
+                "stickerText": "On Sale!"
             },
             "name": "Biltwell Gringo S ECE Helmet - Metallic Candy Red",
             "image": {
@@ -95,16 +140,32 @@
                 "count": 27
             },
             "price": {
+                "lowPrice": 189.95,
+                "highPrice": 189.95,
                 "salePrice": "$189.95",
                 "wasPrice": "$219.95"
-            }
+            },
+            "isFeatured": false,
+            "isBestSeller": false,
+            "isNewArrival": false
         },
         {
+            "id": 4,
+            "facetIds": [
+                "100003", 
+                "200001", 
+                "200002", 
+                "200003", 
+                "200004", 
+                "200005",
+                "300002",
+                "400005"
+            ],
             "productURL": "/",
             "defaultSkuURL": "/",
             "sticker": {
                 "cssClass": "",
-                "stickerText": "Long Sticker Text to Demonstrate Ellipsis!"
+                "stickerText": "New Arrival!"
             },
             "name": "Arai Corsair X Helmet - RC",
             "image": {
@@ -117,16 +178,32 @@
                 "count": 97
             },
             "price": {
+                "lowPrice": 899.99,
+                "highPrice": 899.99,
                 "salePrice": "$899.99",
                 "wasPrice": ""
-            }
+            },
+            "isFeatured": false,
+            "isBestSeller": false,
+            "isNewArrival": true
         },
         {
+            "id": 5,
+            "facetIds": [
+                "100003", 
+                "200002", 
+                "200003", 
+                "200004", 
+                "200005",
+                "300003",
+                "300005",
+                "400003"
+            ],
             "productURL": "/",
             "defaultSkuURL": "/",
             "sticker": {
                 "cssClass": "",
-                "stickerText": ""
+                "stickerText": "Long Sticker To Show Ellipsis!"
             },
             "name": "Arai Regent X Helmet - Bend Red",
             "image": {
@@ -139,16 +216,34 @@
                 "count": 11
             },
             "price": {
+                "lowPrice": 559.95,
+                "highPrice": 559.95,
                 "salePrice": "$559.95",
                 "wasPrice": ""
-            }
+            },
+            "isFeatured": false,
+            "isBestSeller": false,
+            "isNewArrival": false
         },
         {
+            "id": 6,
+            "facetIds": [
+                "100004", 
+                "200001", 
+                "200002", 
+                "200003", 
+                "200004", 
+                "200005",
+                "300001",
+                "300002",
+                "300005",
+                "400003"
+            ],
             "productURL": "/",
             "defaultSkuURL": "/",
             "sticker": {
                 "cssClass": "",
-                "stickerText": "Staff Favorite! <i class=\"fas fa-thumbs-up\"></i>"
+                "stickerText": "Best Seller! <i class=\"fas fa-thumbs-up\"></i>"
             },
             "name": "Bell Eliminator Helmet - Rally - Matte/Gloss Black/Orange",
             "image": {
@@ -180,16 +275,30 @@
                 "count": 103
             },
             "price": {
+                "lowPrice": 419.95,
+                "highPrice": 419.95,
                 "salePrice": "$419.95",
                 "wasPrice": ""
-            }
+            },
+            "isFeatured": false,
+            "isBestSeller": true,
+            "isNewArrival": false
         },
         {
+            "id": 7,
+            "facetIds": [
+                "100006",
+                "200003", 
+                "200004", 
+                "200005",
+                "300006",
+                "400001"
+            ],
             "productURL": "/",
             "defaultSkuURL": "/",
             "sticker": {
                 "cssClass": "",
-                "stickerText": "Closeout!"
+                "stickerText": "Featured Closeout!"
             },
             "name": "Biltwell Gringo S ECE Helmet - Metallic Yukon Gold",
             "image": {
@@ -202,16 +311,32 @@
                 "count": 53
             },
             "price": {
+                "lowPrice": 199.95,
+                "highPrice": 199.95,
                 "salePrice": "$199.95",
                 "wasPrice": "$219.95"
-            }
+            },
+            "isFeatured": true,
+            "isBestSeller": false,
+            "isNewArrival": false
         },
         {
+            "id": 8,
+            "facetIds": [
+                "100006", 
+                "200002", 
+                "200003", 
+                "200004", 
+                "200005",
+                "300001",
+                "300005",
+                "400002"
+            ],
             "productURL": "/",
             "defaultSkuURL": "/",
             "sticker": {
                 "cssClass": "",
-                "stickerText": ""
+                "stickerText": "Featured"
             },
             "name": "Biltwell Lanesplitter Helmet",
             "image": {
@@ -243,11 +368,24 @@
                 "count": 111
             },
             "price": {
+                "lowPrice": 249.95,
+                "highPrice": 274.95,
                 "salePrice": "$249.95 - $274.95",
                 "wasPrice": ""
-            }
+            },
+            "isFeatured": true,
+            "isBestSeller": false,
+            "isNewArrival": false
         },
         {
+            "id": 9,
+            "facetIds": [
+                "100013",
+                "200003", 
+                "200004", 
+                "200005",
+                "400002"
+            ],
             "productURL": "/",
             "defaultSkuURL": "/",
             "sticker": {
@@ -265,16 +403,29 @@
                 "count": 273
             },
             "price": {
+                "lowPrice": 279.96,
+                "highPrice": 279.96,
                 "salePrice": "$279.96",
                 "wasPrice": ""
-            }
+            },
+            "isFeatured": false,
+            "isBestSeller": false,
+            "isNewArrival": false
         },
         {
+            "id": 10,
+            "facetIds": [
+                "100013",
+                "300004",
+                "300006",
+                "400002",
+                "500001"
+            ],
             "productURL": "/",
             "defaultSkuURL": "/",
             "sticker": {
                 "cssClass": "",
-                "stickerText": "New Arrival!"
+                "stickerText": "Featured New Arrival!"
             },
             "name": "Nexx G200 Helmet - Desert Race Yellow",
             "image": {
@@ -287,11 +438,27 @@
                 "count": 0
             },
             "price": {
+                "lowPrice": 349.95,
+                "highPrice": 349.95,
                 "salePrice": "$349.95",
                 "wasPrice": ""
-            }
+            },
+            "isFeatured": true,
+            "isBestSeller": false,
+            "isNewArrival": true
         },
         {
+            "id": 11,
+            "facetIds": [
+                "100016", 
+                "200001", 
+                "200002", 
+                "200003", 
+                "200004", 
+                "200005",
+                "300001",
+                "400005"
+            ],
             "productURL": "/",
             "defaultSkuURL": "/",
             "sticker": {
@@ -309,11 +476,26 @@
                 "count": 10
             },
             "price": {
+                "lowPrice": 1399.00,
+                "highPrice": 1399.00,
                 "salePrice": "$1,399.00",
                 "wasPrice": ""
-            }
+            },
+            "isFeatured": false,
+            "isBestSeller": false,
+            "isNewArrival": true
         },
         {
+            "id": 12,
+            "facetIds": [
+                "100021", 
+                "200002", 
+                "200003", 
+                "200004", 
+                "200005",
+                "400002",
+                "500002"
+            ],
             "productURL": "/",
             "defaultSkuURL": "/",
             "sticker": {
@@ -331,11 +513,24 @@
                 "count": 87
             },
             "price": {
+                "lowPrice": 399.99,
+                "highPrice": 399.99,
                 "salePrice": "$399.99",
                 "wasPrice": "$429.99"
-            }
+            },
+            "isFeatured": false,
+            "isBestSeller": false,
+            "isNewArrival": false
         },
         {
+            "id": 13,
+            "facetIds": [
+                "100022", 
+                "200004", 
+                "200005",
+                "300006",
+                "400003"
+            ],
             "productURL": "/",
             "defaultSkuURL": "/",
             "sticker": {
@@ -353,16 +548,33 @@
                 "count": 99
             },
             "price": {
+                "lowPrice": 599.99,
+                "highPrice": 599.99,
                 "salePrice": "$599.99",
                 "wasPrice": ""
-            }
+            },
+            "isFeatured": false,
+            "isBestSeller": false,
+            "isNewArrival": false
         },
         {
+            "id": 14,
+            "facetIds": [
+                "100022", 
+                "200001", 
+                "200002", 
+                "200003", 
+                "200004", 
+                "200005",
+                "300002",
+                "300003",
+                "400003"
+            ],
             "productURL": "/",
             "defaultSkuURL": "/",
             "sticker": {
                 "cssClass": "",
-                "stickerText": "Staff Favorite! <i class=\"fas fa-thumbs-up\"></i>"
+                "stickerText": "Best Seller! <i class=\"fas fa-thumbs-up\"></i>"
             },
             "name": "Shoei RF-1200 Philosopher Helmet - Black/Red",
             "image": {
@@ -375,16 +587,32 @@
                 "count": 1242
             },
             "price": {
+                "lowPrice": 589.99,
+                "highPrice": 589.99,
                 "salePrice": "$589.99",
                 "wasPrice": ""
-            }
+            },
+            "isFeatured": false,
+            "isBestSeller": true,
+            "isNewArrival": false
         },
         {
+            "id": 15,
+            "facetIds": [
+                "100023", 
+                "200002", 
+                "200003", 
+                "200004", 
+                "200005",
+                "300001",
+                "300006",
+                "400003"
+            ],
             "productURL": "/",
             "defaultSkuURL": "/",
             "sticker": {
                 "cssClass": "",
-                "stickerText": "Customer Favorite! <i class=\"fas fa-thumbs-up\"></i>"
+                "stickerText": "Featured Best Seller! <i class=\"fas fa-thumbs-up\"></i>"
             },
             "name": "Simpson Ghost Bandit Helmet - Ponyboy",
             "image": {
@@ -397,19 +625,212 @@
                 "count": 112
             },
             "price": {
+                "lowPrice": 499.95,
+                "highPrice": 499.95,
                 "salePrice": "$499.95",
                 "wasPrice": ""
-            }
+            },
+            "isFeatured": true,
+            "isBestSeller": true,
+            "isNewArrival": false
+        },
+        {
+            "id": 16,
+            "facetIds": [ 
+                "100018",
+                "300001",
+                "200002",
+                "200003",
+                "200004",
+                "200005",
+                "400001"
+            ],
+            "productURL": "/",
+            "defaultSkuURL": "/",
+            "sticker": {
+                "cssClass": "",
+                "stickerText": "Featured"
+            },
+            "name": "Scorpion EXO-R420 Helmet - Gloss Black",
+            "image": {
+                "url": "/images/products/scorpion-exo-r420-gloss-black_480x480.jpg",
+                "altText": "Scorpion EXO-R420 Helmet - Gloss Black"
+            },
+            "styles": [],
+            "ratings": {
+                "rating": 9,
+                "count": 283
+            },
+            "price": {
+                "lowPrice": 149.95,
+                "highPrice": 149.95,
+                "salePrice": "$149.95",
+                "wasPrice": ""
+            },
+            "isFeatured": true,
+            "isBestSeller": false,
+            "isNewArrival": false
+        },
+        {
+            "id": 17,
+            "facetIds": [ 
+                "100002",
+                "200002",
+                "200003",
+                "200004",
+                "200005",
+                "300005",
+                "400001",
+                "400002",
+                "500003"
+            ],
+            "productURL": "/",
+            "defaultSkuURL": "/",
+            "sticker": {
+                "cssClass": "",
+                "stickerText": "Open Box"
+            },
+            "name": "AGV K1 Helmet - White",
+            "image": {
+                "url": "/images/products/agv-k1-white_480x480.jpg",
+                "altText": "AGV K1 Helmet - White"
+            },
+            "styles": [],
+            "ratings": {
+                "rating": 9,
+                "count": 123
+            },
+            "price": {
+                "lowPrice": 199.95,
+                "highPrice": 209.95,
+                "salePrice": "$199.95 - $209.95",
+                "wasPrice": ""
+            },
+            "isFeatured": false,
+            "isBestSeller": false,
+            "isNewArrival": false
+        },
+        {
+            "id": 18,
+            "facetIds": [ 
+                "100010",
+                "200002",
+                "200003",
+                "200004",
+                "200005",
+                "300005",
+                "400002"
+            ],
+            "productURL": "/",
+            "defaultSkuURL": "/",
+            "sticker": {
+                "cssClass": "",
+                "stickerText": "Staff Favorite!"
+            },
+            "name": "Icon Airflite Helmet - White",
+            "image": {
+                "url": "/images/products/icon-airflite-white_480x480.jpg",
+                "altText": "Icon Airflite Helmet - White"
+            },
+            "styles": [],
+            "ratings": {
+                "rating": 9,
+                "count": 526
+            },
+            "price": {
+                "lowPrice": 250.00,
+                "highPrice": 250.00,
+                "salePrice": "$250.00",
+                "wasPrice": ""
+            },
+            "isFeatured": false,
+            "isBestSeller": true,
+            "isNewArrival": false
+        },
+        {
+            "id": 19,
+            "facetIds": [ 
+                "100010",
+                "200002",
+                "200003",
+                "200004",
+                "200005",
+                "300006",
+                "400002",
+                "500002"
+            ],
+            "productURL": "/",
+            "defaultSkuURL": "/",
+            "sticker": {
+                "cssClass": "-sale",
+                "stickerText": "On Sale!"
+            },
+            "name": "Icon Airflite Battlescar 2 Helmet",
+            "image": {
+                "url": "/images/products/icon-airflite-battlescar-2_480x480.jpg",
+                "altText": "Icon Airflite Battlescar 2 Helmet"
+            },
+            "styles": [],
+            "ratings": {
+                "rating": 8,
+                "count": 473
+            },
+            "price": {
+                "lowPrice": 270.00,
+                "highPrice": 270.00,
+                "salePrice": "$270.00",
+                "wasPrice": "$320.00"
+            },
+            "isFeatured": false,
+            "isBestSeller": false,
+            "isNewArrival": false
+        },
+        {
+            "id": 20,
+            "facetIds": [ 
+                "100009",
+                "200003",
+                "200004",
+                "200005",
+                "300003",
+                "400001"
+            ],
+            "productURL": "/",
+            "defaultSkuURL": "/",
+            "sticker": {
+                "cssClass": "",
+                "stickerText": ""
+            },
+            "name": "HJC CL-17 Helmet - Wine",
+            "image": {
+                "url": "/images/products/hjc-cl-17-wine_480x480.jpg",
+                "altText": "HJC CL-17 Helmet - Wine"
+            },
+            "styles": [],
+            "ratings": {
+                "rating": 6,
+                "count": 557
+            },
+            "price": {
+                "lowPrice": 130.49,
+                "highPrice": 130.49,
+                "salePrice": "$130.49",
+                "wasPrice": ""
+            },
+            "isFeatured": false,
+            "isBestSeller": false,
+            "isNewArrival": false
         }
     ],
     "facets": [
         {
-            "id": "100000",
+            "id": 1,
+            "facetId": "100000",
             "label": "Brand",
             "isOpen": true,
             "isFilterable": true,
             "filterLabelText": "Search Brands",
-            "seeAll": "brands",
+            "seeAll": "",
             "refinements": [
                 {
                     "id": "100001",
@@ -480,11 +901,131 @@
                     "count": 72,
                     "isEnabled": true,
                     "isSelected": false
+                },
+                {
+                    "id": "100011",
+                    "label": "Klim",
+                    "count": 3,
+                    "isEnabled": true,
+                    "isSelected": false
+                },
+                {
+                    "id": "100012",
+                    "label": "LS2 Helmets",
+                    "count": 50,
+                    "isEnabled": true,
+                    "isSelected": false
+                },
+                {
+                    "id": "100013",
+                    "label": "Nexx Helmets",
+                    "count": 29,
+                    "isEnabled": true,
+                    "isSelected": false
+                },
+                {
+                    "id": "100014",
+                    "label": "Nolan Helmets",
+                    "count": 6,
+                    "isEnabled": true,
+                    "isSelected": false
+                },
+                {
+                    "id": "100015",
+                    "label": "RSD",
+                    "count": 1,
+                    "isEnabled": true,
+                    "isSelected": false
+                },
+                {
+                    "id": "100016",
+                    "label": "Ruby Helmets",
+                    "count": 18,
+                    "isEnabled": true,
+                    "isSelected": false
+                },
+                {
+                    "id": "100017",
+                    "label": "Schuberth Helmets",
+                    "count": 18,
+                    "isEnabled": true,
+                    "isSelected": false
+                },
+                {
+                    "id": "100018",
+                    "label": "Scorpion",
+                    "count": 38,
+                    "isEnabled": true,
+                    "isSelected": false
+                },
+                {
+                    "id": "100019",
+                    "label": "Sedici",
+                    "count": 15,
+                    "isEnabled": true,
+                    "isSelected": false
+                },
+                {
+                    "id": "100020",
+                    "label": "Sena",
+                    "count": 6,
+                    "isEnabled": true,
+                    "isSelected": false
+                },
+                {
+                    "id": "100021",
+                    "label": "Shark Helmets",
+                    "count": 28,
+                    "isEnabled": true,
+                    "isSelected": false
+                },
+                {
+                    "id": "100022",
+                    "label": "Shoei Helmets",
+                    "count": 55,
+                    "isEnabled": true,
+                    "isSelected": false
+                },
+                {
+                    "id": "100023",
+                    "label": "Simpson Helmets",
+                    "count": 12,
+                    "isEnabled": true,
+                    "isSelected": false
+                },
+                {
+                    "id": "100024",
+                    "label": "Speed & Strength",
+                    "count": 15,
+                    "isEnabled": true,
+                    "isSelected": false
+                },
+                {
+                    "id": "100025",
+                    "label": "Street & Steel",
+                    "count": 1,
+                    "isEnabled": true,
+                    "isSelected": false
+                },
+                {
+                    "id": "100026",
+                    "label": "Suomy",
+                    "count": 2,
+                    "isEnabled": true,
+                    "isSelected": false
+                },
+                {
+                    "id": "100027",
+                    "label": "X-Lite Helmets",
+                    "count": 6,
+                    "isEnabled": true,
+                    "isSelected": false
                 }
             ]
         },
         {
-            "id": "200000",
+            "id": 2,
+            "facetId": "200000",
             "label": "Customer Ratings",
             "isOpen": false,
             "isFilterable": false,
@@ -534,7 +1075,8 @@
             ]
         },
         {
-            "id": "300000",
+            "id": 3,
+            "facetId": "300000",
             "label": "Color",
             "isOpen": false,
             "isFilterable": false,
@@ -578,7 +1120,7 @@
                 },
                 {
                     "id": "300006",
-                    "label": "Green",
+                    "label": "Yellow/Gold",
                     "count": 84,
                     "isEnabled": true,
                     "isSelected": false
@@ -586,8 +1128,9 @@
             ]
         },
         {
-            "id": "400000",
-            "label": "Price Rage",
+            "id": 4,
+            "facetId": "400000",
+            "label": "Price Range",
             "isOpen": false,
             "isFilterable": false,
             "filterLabelText": "",
@@ -631,7 +1174,8 @@
             ]
         },
         {
-            "id": "500000",
+            "id": 5,
+            "facetId": "500000",
             "label": "More Ways to Shop",
             "isOpen": false,
             "isFilterable": false,
