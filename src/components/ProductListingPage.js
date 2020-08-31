@@ -10,6 +10,7 @@ import ProductsGrid from './ProductsGrid';
 import ProductsPagination from './ProductsPagination';
 import AlertBox from './AlertBox';
 import usePlpResults from '../hooks/usePlpResults';
+import LoadingSpinner from './LoadingSpinner';
 
 const ProductListingPage = ({initialFacetIds, initialSort, itemsPerPage, startingPageIndex}) => {
     // consts/vars
@@ -84,7 +85,7 @@ const ProductListingPage = ({initialFacetIds, initialSort, itemsPerPage, startin
 
     if (!plpResults.products) {
         return (
-            <h1>Loading...</h1>
+            <LoadingSpinner />
         );
     }
 
