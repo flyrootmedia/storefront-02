@@ -98,14 +98,12 @@ const ProductListingPage = ({initialFacetIds, initialSort, itemsPerPage, startin
                 />
 
                 <AlertBox isDismissable={true}>
-                    <p><strong>NOTE:</strong> This app is currently set up with hardcoded test JSON for the different user selections, so there&rsquo;s only
-                    one set of data you&rsquo;ll see change when selecting a filter, a new sort, or changing the pagination. To see it behave
-                    somewhat as expected, use the following:</p>
-                    <ol>
-                        <li>For filtering, open the Brand filter and toggle the "Biltwell" option.</li>
-                        <li>For sorting, select "$ (High - Low)" then back to "Featured"</li>
-                        <li>For pagination, click the "next" button or select page 5, then go back to page 1</li>
-                    </ol>
+                    <p><strong>NOTE:</strong> This app is my first experimentation with React outside of courses/tutorials. 
+                    It's currently set up with a mock api that doesn't pull from a database, so doesn't support filtering/sorting, 
+                    or pagination. To get around this and make it feel a little less broken I'm performing these actions in the front end, 
+                    which I know is unrealistic and expensve, and makes it feel a bit wonky. The filters aren't taking into account which 
+                    ones should be additive or subtractive, and the counts are kind of messed up because of that.
+                    </p>
                 </AlertBox>
                 
                 <section id="productsTools" className="products-tools">

@@ -47,12 +47,12 @@
         // the facet is open
         &.-open {
             max-height: 500px;
-            .products-tools_facet-options.-overflow::after {
+            .facet_options.-overflow::after {
                 content: "";
                 position: absolute;
                 bottom: 0;
                 width: 90%;
-                height: 100px;
+                height: 50px;
                 background: linear-gradient(rgba(255,255,255,0),#fff);
                 pointer-events: none;
             }

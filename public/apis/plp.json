@@ -633,6 +633,193 @@
             "isFeatured": true,
             "isBestSeller": true,
             "isNewArrival": false
+        },
+        {
+            "id": 16,
+            "facetIds": [ 
+                "100018",
+                "300001",
+                "200002",
+                "200003",
+                "200004",
+                "200005",
+                "400001"
+            ],
+            "productURL": "/",
+            "defaultSkuURL": "/",
+            "sticker": {
+                "cssClass": "",
+                "stickerText": "Featured"
+            },
+            "name": "Scorpion EXO-R420 Helmet - Gloss Black",
+            "image": {
+                "url": "/images/products/scorpion-exo-r420-gloss-black_480x480.jpg",
+                "altText": "Scorpion EXO-R420 Helmet - Gloss Black"
+            },
+            "styles": [],
+            "ratings": {
+                "rating": 9,
+                "count": 283
+            },
+            "price": {
+                "lowPrice": 149.95,
+                "highPrice": 149.95,
+                "salePrice": "$149.95",
+                "wasPrice": ""
+            },
+            "isFeatured": true,
+            "isBestSeller": false,
+            "isNewArrival": false
+        },
+        {
+            "id": 17,
+            "facetIds": [ 
+                "100002",
+                "200002",
+                "200003",
+                "200004",
+                "200005",
+                "300005",
+                "400001",
+                "400002",
+                "500003"
+            ],
+            "productURL": "/",
+            "defaultSkuURL": "/",
+            "sticker": {
+                "cssClass": "",
+                "stickerText": "Open Box"
+            },
+            "name": "AGV K1 Helmet - White",
+            "image": {
+                "url": "/images/products/agv-k1-white_480x480.jpg",
+                "altText": "AGV K1 Helmet - White"
+            },
+            "styles": [],
+            "ratings": {
+                "rating": 9,
+                "count": 123
+            },
+            "price": {
+                "lowPrice": 199.95,
+                "highPrice": 209.95,
+                "salePrice": "$199.95 - $209.95",
+                "wasPrice": ""
+            },
+            "isFeatured": false,
+            "isBestSeller": false,
+            "isNewArrival": false
+        },
+        {
+            "id": 18,
+            "facetIds": [ 
+                "100010",
+                "200002",
+                "200003",
+                "200004",
+                "200005",
+                "300005",
+                "400002"
+            ],
+            "productURL": "/",
+            "defaultSkuURL": "/",
+            "sticker": {
+                "cssClass": "",
+                "stickerText": "Staff Favorite!"
+            },
+            "name": "Icon Airflite Helmet - White",
+            "image": {
+                "url": "/images/products/icon-airflite-white_480x480.jpg",
+                "altText": "Icon Airflite Helmet - White"
+            },
+            "styles": [],
+            "ratings": {
+                "rating": 9,
+                "count": 526
+            },
+            "price": {
+                "lowPrice": 250.00,
+                "highPrice": 250.00,
+                "salePrice": "$250.00",
+                "wasPrice": ""
+            },
+            "isFeatured": false,
+            "isBestSeller": true,
+            "isNewArrival": false
+        },
+        {
+            "id": 19,
+            "facetIds": [ 
+                "100010",
+                "200002",
+                "200003",
+                "200004",
+                "200005",
+                "300006",
+                "400002",
+                "500002"
+            ],
+            "productURL": "/",
+            "defaultSkuURL": "/",
+            "sticker": {
+                "cssClass": "-sale",
+                "stickerText": "On Sale!"
+            },
+            "name": "Icon Airflite Battlescar 2 Helmet",
+            "image": {
+                "url": "/images/products/icon-airflite-battlescar-2_480x480.jpg",
+                "altText": "Icon Airflite Battlescar 2 Helmet"
+            },
+            "styles": [],
+            "ratings": {
+                "rating": 8,
+                "count": 473
+            },
+            "price": {
+                "lowPrice": 270.00,
+                "highPrice": 270.00,
+                "salePrice": "$270.00",
+                "wasPrice": "$320.00"
+            },
+            "isFeatured": false,
+            "isBestSeller": false,
+            "isNewArrival": false
+        },
+        {
+            "id": 20,
+            "facetIds": [ 
+                "100009",
+                "200003",
+                "200004",
+                "200005",
+                "300003",
+                "400001"
+            ],
+            "productURL": "/",
+            "defaultSkuURL": "/",
+            "sticker": {
+                "cssClass": "",
+                "stickerText": ""
+            },
+            "name": "HJC CL-17 Helmet - Wine",
+            "image": {
+                "url": "/images/products/hjc-cl-17-wine_480x480.jpg",
+                "altText": "HJC CL-17 Helmet - Wine"
+            },
+            "styles": [],
+            "ratings": {
+                "rating": 6,
+                "count": 557
+            },
+            "price": {
+                "lowPrice": 130.49,
+                "highPrice": 130.49,
+                "salePrice": "$130.49",
+                "wasPrice": ""
+            },
+            "isFeatured": false,
+            "isBestSeller": false,
+            "isNewArrival": false
         }
     ],
     "facets": [

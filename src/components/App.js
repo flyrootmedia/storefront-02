@@ -11,7 +11,7 @@ const App = () => {
             <ProductListingPage 
                 initialFacetIds='000000' 
                 initialSort='featured' 
-                itemsPerPage={20} 
+                itemsPerPage={10} 
                 startingPageIndex={0}
             />
             <GlobalFooter /> 
