@@ -1,13 +1,19 @@
+import history from '../history';
+
+const baseURL = 'https://5f4983e18e271c001650ca8f.mockapi.io';
+let plpResults = {};
+let selectedRefinementsArr = [];
+let query = '';
+
 /**
  * @description This function is doing a lot that should not be done on the front end. I'm currently doing a bunch of 
  * calculations for filtering, sorting, and pagination that should really be done on the back end. Just doing it here for
  * now to make the page work a bit more realistically since I don't have an api that's making any real db request
  * @param {obj} plpData: the entire plp data response 
- * @param {arr} selectedRefinementsArr: array of selected refinement IDs as strings
  * @param {string} newSort: the currently selected sort option
  * @param {int} newPageStartIndex: the start index in the products array for the currently selected page
  */
-export default (plpData, selectedRefinementsArr, newSort, newPageStartIndex) => {
+const onDataLoaded = (plpData, newSort, newPageStartIndex) => {
     let availableProducts = [];
     let paginatedProducts = [];
     let isFiltered = selectedRefinementsArr.length > 1;
@@ -128,4 +134,34 @@ export default (plpData, selectedRefinementsArr, newSort, newPageStartIndex) => 
 
     // return the whole PLP object
     return plpData;
+};
+
+export default async (selectedRefinements, sort, itemsPerPage, activePageIndex) => {
+    try {
+        const plpUrl = new URL(`${baseURL}/plp`);
+        selectedRefinementsArr = selectedRefinements.split('+');
+        query = new URLSearchParams({
+            facets: selectedRefinements,
+            sort: sort,
+            itemsPerPage: itemsPerPage,
+            pageStartIndex: activePageIndex
+        });
+
+        let plpResponse = await fetch (`${plpUrl}`, { method: 'GET' });
+
+        if (!plpResponse.ok) {
+            throw new Error(`There was an error loading the PLP data. status: ${plpResponse.status}`);
+        } else {
+            let plpDataArr = await plpResponse.json();
+            plpResults = onDataLoaded(plpDataArr[0], sort, activePageIndex);
+        }
+    } catch (error) {
+        alert(`There was an error loading the requested data. status: ${error}`)
+    }
+
+    // TODO: find the correct place to do this. It should probably come first and then the state would be updated based
+    // on the query string?? 
+    history.push(`?${query}`);
+
+    return plpResults;
 };

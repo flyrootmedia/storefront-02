@@ -8,12 +8,7 @@ const App = () => {
     return (
         <div className="site">
             <GlobalHeader />
-            <ProductListingPage 
-                initialFacetIds='000000' 
-                initialSort='featured' 
-                itemsPerPage={10} 
-                startingPageIndex={0}
-            />
+            <ProductListingPage />
             <GlobalFooter /> 
         </div>
     );

@@ -1,6 +1,5 @@
-import history from '../history';
 import ACTION_TYPES from './types';
-import onPlpDataLoaded from './onPlpDataLoaded';
+import fetchPlpResults from './fetchPlpResults';
 
 // Global Actions
 
@@ -34,41 +33,68 @@ export const closeFacetsMenu = () => {
     };
 };
 
-// fetch PLP data
-export const fetchPlpResults = plpParams => async (dispatch, getState) => {
+export const updatePlpPage = (pageIndex) => {
+    return {
+        type: ACTION_TYPES.UPDATE_PLP_PAGE,
+        payload: pageIndex
+    };
+};
 
-    // TODO: send plpParams as an object
+export const updatePlpRefinements = (refinementsStr) => {
+    return {
+        type: ACTION_TYPES.UPDATE_PLP_REFINEMENTS,
+        payload: refinementsStr
+    };
+};
 
-    try {
-        const plpUrl = new URL('https://5f4983e18e271c001650ca8f.mockapi.io/plp');
-        const selectedRefinementsArr = plpParams.facets.split('+');
-        query = new URLSearchParams({
-            facets: plpParams.facets,
-            sort: plpParams.sort,
-            itemsPerPage: plpParams.itemsPerPage,
-            pageStartIndex: plpParams.pageStartIndex
-        });
+export const updatePlpSort = (sort) => {
+    return {
+        type: ACTION_TYPES.UPDATE_PLP_SORT,
+        payload: sort
+    };
+};
 
-        let plpResponse = await fetch (`${plpUrl}`, { method: 'GET' });
+// facet selections changed
+export const updateSelectedPlpRefinements = (refinementId, isSelected) => async (dispatch, getState) => {
+    let refinementIdsArr = getState().plpRefinements.split('+');
+    const index = refinementIdsArr.indexOf(refinementId); 
 
-        if (!plpResponse.ok) {
-            throw new Error(`There was an error loading the PLP data. status: ${plpResponse.status}`);
-        } else {
-            let plpDataArr = await plpResponse.json();
-
-            dispatch({
-                type: ACTION_TYPES.FETCH_PLP_RESULTS,
-                payload: onPlpDataLoaded(plpDataArr[0], selectedRefinementsArr, plpParams.sort, plpParams.pageStartIndex)
-            });
-
-            // TODO: this order is probably wrong. Need to figure out how to navigate to the query string FIRST,
-            // and load the results based on that
-            history.push(`?${query}`);
-        }
-    } catch (error) {
-        alert(`There was an error loading the requested data. status: ${error}`);
+    if (index > -1 && !isSelected) {
+        refinementIdsArr.splice(index, 1);
+    } else if (index === -1 && isSelected) {
+        refinementIdsArr.push(refinementId);
     }
 
+    // make request to fetchPlpResults with updated refinement values
+    let newPlpResults = await new Promise(fetchPlpResults(refinementIdsArr.join('+'), getState().plpSort, getState().plpItemsPerPage, getState().plpActivePageIndex));
+
+    dispatch({
+        type: ACTION_TYPES.FETCH_PLP_RESULTS,
+        payload: {...getState().plpResults, newPlpResults}
+    });
+};
+
+// sort changed
+export const updateSelectedPlpSort = (selectedSort) => async (dispatch, getState) => {
+    // make request to fetchPlpResults with updated sort
+    let newPlpResults = await new Promise(fetchPlpResults(getState().plpRefinements, selectedSort, getState().plpItemsPerPage, getState().plpActivePageIndex));
+
+    dispatch({
+        type: ACTION_TYPES.FETCH_PLP_RESULTS,
+        payload: {...getState().plpResults, newPlpResults}
+    });
+};
+
+// pagination changed
+export const updateSelectedPlpPage = (selectedPageIndex) => async (dispatch, getState) => {
+    // make request to fetchPlpResults with updated page
+    // make request to fetchPlpResults with updated sort
+    let newPlpResults = await new Promise(fetchPlpResults(getState().plpRefinements, getState().plpSort, getState().plpItemsPerPage, selectedPageIndex));
+
+    dispatch({
+        type: ACTION_TYPES.FETCH_PLP_RESULTS,
+        payload: {...getState().plpResults, newPlpResults}
+    });
 };
 
 // fetch brands
