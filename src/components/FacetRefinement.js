@@ -1,7 +1,9 @@
 import './FacetRefinement.scss';
 import React from 'react';
+import { connect } from 'react-redux';
+import { updateSelectedPlpRefinements } from '../actions';
 
-const FacetRefinement = ({ refinement, isVisible, onSelectionsChanged }) => {
+const FacetRefinement = ({ refinement, isVisible, updateSelectedPlpRefinements }) => {
     // render the rating stars if applicable
     let refinementRating = '';
     let style = isVisible ? {display: 'flex'} : {display: 'none'};
@@ -20,11 +22,14 @@ const FacetRefinement = ({ refinement, isVisible, onSelectionsChanged }) => {
             style={style}
             disabled={refinement.isEnabled ? false : true} 
             className={`facet-refinement ${refinement.isSelected ? '-selected' : ''}`} 
-            onClick={() => onSelectionsChanged('refinements', refinement.id, !refinement.isSelected)}
+            onClick={() => updateSelectedPlpRefinements(refinement.id, !refinement.isSelected)}
         >
             {refinementRating}{refinement.label} <span className="count">({refinement.count})</span>
         </button>
     );
 }
 
-export default FacetRefinement;
+export default connect(
+    null,
+    { updateSelectedPlpRefinements }
+)(FacetRefinement);

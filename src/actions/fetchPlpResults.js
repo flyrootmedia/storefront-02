@@ -61,7 +61,7 @@ const onDataLoaded = (plpData, newSort, newItemsPerPage, newPageStartIndex) => {
         if (isFiltered) {
             let facetIds = product.facetIds;
             let refinementIsAvailable = [];
-        
+
             selectedRefinementsArr.forEach((refinementId) => {
                 refinementIsAvailable.push(facetIds.includes(refinementId));
             });
