@@ -1,11 +1,12 @@
 import './GlobalNavMenuItem.scss';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const GlobalNavMenuItem = ( {item, onHeaderClick}) => {
     const menuLinks = item.links.map((link) => {
         return (
             <li key={link.label}>
-                <a href={link.url}>{link.label}</a>
+                <Link to={link.url}>{link.label}</Link>
             </li>
         );
     });
@@ -19,7 +20,7 @@ const GlobalNavMenuItem = ( {item, onHeaderClick}) => {
             <ul>
                 <li className="global-nav-menu-item_header">
                     <h4>{item.headerText}</h4>
-                    <a href={item.seeAllLink} className="see-all">See all</a>
+                    <Link to={item.seeAllLink} className="see-all">See all</Link>
                 </li>
                 {menuLinks}
             </ul>

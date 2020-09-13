@@ -1,6 +1,7 @@
 import { actionTypes } from './types';
 import fetchPlpResults from './fetchPlpResults';
 
+// Called on initial PLP load to get the default full results set
 export const fetchInitialPlpResults = () => async (dispatch, getState) => {
     let newPlpResults = await fetchPlpResults(getState().plpRefinements, getState().plpSort, getState().plpItemsPerPage, getState().plpPage);
 
