@@ -1,3 +1,5 @@
+// TODO: delete after redux is working 
+
 import { useState, useEffect } from 'react';
 
 const usePlpSeeAll = (requestPath) => {

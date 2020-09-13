@@ -1,5 +1,6 @@
 import './ProductCardStyles.scss';
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import ProductCardStylesThumb from './ProductCardStylesThumb';
 
 const ProductCardStyles = ({ styles, onLinkHover }) => {
@@ -33,7 +34,7 @@ const ProductCardStyles = ({ styles, onLinkHover }) => {
 
         // show the "more styles" link
         if (index === 5 && moreStyles > 0) {
-            return <a key={style.altText} href="/">{`+${moreStyles}`}</a>
+            return <Link key={style.altText} to="/product-detail">{`+${moreStyles}`}</Link>
         }
 
         return (

@@ -6,6 +6,10 @@ const StyledSelect = ({ labelText, options, isDisabled, id, cssClass, onChange})
     // in React, set a value to the select rather than attribute "selected" on the option
     let selectedOptionValue = '';
 
+    if (!options) {
+        return null;
+    }
+
     const opts = options.map((option) => {
         // set the selected option
         // NOTE: this will set the value on the select from the rendered data, overriding the default 

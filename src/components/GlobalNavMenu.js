@@ -15,7 +15,7 @@ const GlobalNavMenu = ({ allowMultipleOpen, openIndex, isAnimated, isResponsive,
 
         return (
             <GlobalNavMenuItem 
-                key={item.header}
+                key={item.headerText}
                 item={item} 
                 onHeaderClick={() => onHeaderClick(index)}
             />

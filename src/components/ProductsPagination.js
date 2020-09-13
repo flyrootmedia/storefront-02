@@ -1,20 +1,26 @@
 import './ProductsPagination.scss';
 import React from 'react';
+import { connect } from 'react-redux';
+import { updateSelectedPlpPage } from '../actions';
 import StyledButton from './StyledButton';
 import StyledSelect from './StyledSelect';
 
-const ProductsPagination = ({ pagination, onPaginationChanged }) => {
+const ProductsPagination = ({ pagination, updateSelectedPlpPage }) => {
 
-    const onPreviousClick = (event) => {
-        onPaginationChanged('pageNum', pagination.previousPageStartIndex, null);
+    if (!pagination) {
+        return null;
+    }
+
+    const onPreviousClick = () => {
+        updateSelectedPlpPage(pagination.previousPageStartIndex);
     };
 
-    const onNextClick = (event) => {
-        onPaginationChanged('pageNum', pagination.nextPageStartIndex, null);
+    const onNextClick = () => {
+        updateSelectedPlpPage(pagination.nextPageStartIndex);
     };
 
     const onPageChange = (event) => {
-        onPaginationChanged('pageNum', event.target.value, null);
+        updateSelectedPlpPage(event.target.value);
     };
 
     return (
@@ -47,4 +53,13 @@ const ProductsPagination = ({ pagination, onPaginationChanged }) => {
     );
 }
 
-export default ProductsPagination;
+const mapStateToProps = (state) => {
+    return { 
+        pagination: state.plpResults.pagination
+    }
+};
+
+export default connect(
+    mapStateToProps,
+    { updateSelectedPlpPage }
+)(ProductsPagination);

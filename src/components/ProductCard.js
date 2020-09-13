@@ -1,5 +1,6 @@
 import './ProductCard.scss';
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import ProductSticker from './ProductSticker';
 import ProductCardImage from './ProductCardImage';
 import ProductCardStyles from './ProductCardStyles';
@@ -33,9 +34,9 @@ const ProductCard = ({ product }) => {
                     onLinkHover={updateProductCardImage}
                 />
                 <div className="product-card_title">
-                    <a href="/">
+                    <Link to="/product-detail">
                         {product.name}
-                    </a>
+                    </Link>
                 </div>
                 <ProductRatings 
                     detailURL={product.productURL}
