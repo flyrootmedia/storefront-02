@@ -1,9 +1,14 @@
 import './ProductsPagination.scss';
 import React from 'react';
+import { connect } from 'react-redux';
 import StyledButton from './StyledButton';
 import StyledSelect from './StyledSelect';
 
 const ProductsPagination = ({ pagination, onPaginationChanged }) => {
+
+    if (!pagination) {
+        return null;
+    }
 
     const onPreviousClick = (event) => {
         onPaginationChanged('pageNum', pagination.previousPageStartIndex, null);
@@ -47,4 +52,10 @@ const ProductsPagination = ({ pagination, onPaginationChanged }) => {
     );
 }
 
-export default ProductsPagination;
+const mapStateToProps = (state) => {
+    return { 
+        pagination: state.plpResults.pagination
+    }
+};
+
+export default connect(mapStateToProps)(ProductsPagination);

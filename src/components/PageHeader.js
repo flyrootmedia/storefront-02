@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 const PageHeader = ({ headerText, itemCount }) => {
     const itemCountLabel = parseInt(itemCount) === 1 ? 'product' : 'products';
@@ -11,4 +12,11 @@ const PageHeader = ({ headerText, itemCount }) => {
     );
 }
 
-export default PageHeader;
+const mapStateToProps = (state) => {
+    return { 
+        headerText: state.plpResults.pageHeader,
+        itemCount: state.plpResults.itemCount
+    }
+};
+
+export default connect(mapStateToProps)(PageHeader);

@@ -11,9 +11,10 @@ let query = '';
  * now to make the page work a bit more realistically since I don't have an api that's making any real db request
  * @param {obj} plpData: the entire plp data response 
  * @param {string} newSort: the currently selected sort option
+ * @param {int} newItemsPerPage: the currently selected items per page
  * @param {int} newPageStartIndex: the start index in the products array for the currently selected page
  */
-const onDataLoaded = (plpData, newSort, newPageStartIndex) => {
+const onDataLoaded = (plpData, newSort, newItemsPerPage, newPageStartIndex) => {
     let availableProducts = [];
     let paginatedProducts = [];
     let isFiltered = selectedRefinementsArr.length > 1;
@@ -81,7 +82,7 @@ const onDataLoaded = (plpData, newSort, newPageStartIndex) => {
 
     // set the products to display based on the current page number
     availableProducts.forEach((product, index) => {
-        if (newPageStartIndex <= index && index < (parseInt(newPageStartIndex) + parseInt(itemsPerPage))) {
+        if (newPageStartIndex <= index && index < (parseInt(newPageStartIndex) + parseInt(newItemsPerPage))) {
             paginatedProducts.push(product);     
         }
     });
@@ -89,15 +90,15 @@ const onDataLoaded = (plpData, newSort, newPageStartIndex) => {
     plpData.products = paginatedProducts;
 
     // set pagination buttons and options
-    numberOfPages = Math.ceil(plpData.itemCount / itemsPerPage);
-    plpData.pagination.previousPageStartIndex = newPageStartIndex === 0 ? null : newPageStartIndex - itemsPerPage;
+    numberOfPages = Math.ceil(plpData.itemCount / newItemsPerPage);
+    plpData.pagination.previousPageStartIndex = newPageStartIndex === 0 ? null : newPageStartIndex - newItemsPerPage;
     plpData.pagination.currentPageStartIndex = newPageStartIndex;
-    plpData.pagination.nextPageStartIndex = newPageStartIndex / itemsPerPage + 1 === numberOfPages ? null : newPageStartIndex + itemsPerPage;
+    plpData.pagination.nextPageStartIndex = newPageStartIndex / newItemsPerPage + 1 === numberOfPages ? null : newPageStartIndex + newItemsPerPage;
 
     for (let i = 0; i < numberOfPages; i++) {
         let option = {};
-        option.selected = newPageStartIndex / itemsPerPage === i;
-        option.value = i * itemsPerPage;
+        option.selected = newPageStartIndex / newItemsPerPage === i;
+        option.value = i * newItemsPerPage;
         option.display = `${i + 1} of ${numberOfPages}`; 
 
         paginationOptions.push(option);
@@ -153,7 +154,7 @@ export default async (selectedRefinements, sort, itemsPerPage, activePageIndex) 
             throw new Error(`There was an error loading the PLP data. status: ${plpResponse.status}`);
         } else {
             let plpDataArr = await plpResponse.json();
-            plpResults = onDataLoaded(plpDataArr[0], sort, activePageIndex);
+            plpResults = onDataLoaded(plpDataArr[0], sort, itemsPerPage, activePageIndex);
         }
     } catch (error) {
         alert(`There was an error loading the requested data. status: ${error}`)

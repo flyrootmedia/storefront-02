@@ -1,4 +1,4 @@
-export const ACTION_TYPES = {
+export const actionTypes = {
     CLOSE_FACETS_MENU: 'CLOSE_FACETS_MENU',
     CLOSE_MAIN_MENU: 'CLOSE_MAIN_MENU',
     FETCH_ALL_BRANDS: 'FETCH_ALL_BRANDS',

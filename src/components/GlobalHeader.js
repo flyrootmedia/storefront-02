@@ -6,7 +6,7 @@ import GlobalNavButton from './GlobalNavButton';
 const GlobalHeader = () => {
     const[navIsOpen, setNavIsOpen] = useState(false);
 
-    const toggleNavState = (event) => {
+    const toggleNavState = () => {
         setNavIsOpen(!navIsOpen);
     };
 

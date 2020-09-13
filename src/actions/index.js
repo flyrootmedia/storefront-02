@@ -1,55 +1,23 @@
-import ACTION_TYPES from './types';
+import { actionTypes } from './types';
 import fetchPlpResults from './fetchPlpResults';
-
-// Global Actions
-
-export const openMainMenu = () => {
-    return {
-        type: ACTION_TYPES.OPEN_MAIN_MENU,
-        payload: true
-    };
-};
-
-export const closeMainMenu = () => {
-    return {
-        type: ACTION_TYPES.CLOSE_MAIN_MENU,
-        payload: false
-    };
-};
-
-// PLP Actions
-
-export const openFacetsMenu = () => {
-    return {
-        type: ACTION_TYPES.OPEN_FACETS_MENU,
-        payload: true
-    };
-};
-
-export const closeFacetsMenu = () => {
-    return {
-        type: ACTION_TYPES.CLOSE_FACETS_MENU,
-        payload: false
-    };
-};
 
 export const updatePlpPage = (pageIndex) => {
     return {
-        type: ACTION_TYPES.UPDATE_PLP_PAGE,
+        type: actionTypes.UPDATE_PLP_PAGE,
         payload: pageIndex
     };
 };
 
 export const updatePlpRefinements = (refinementsStr) => {
     return {
-        type: ACTION_TYPES.UPDATE_PLP_REFINEMENTS,
+        type: actionTypes.UPDATE_PLP_REFINEMENTS,
         payload: refinementsStr
     };
 };
 
 export const updatePlpSort = (sort) => {
     return {
-        type: ACTION_TYPES.UPDATE_PLP_SORT,
+        type: actionTypes.UPDATE_PLP_SORT,
         payload: sort
     };
 };
@@ -69,7 +37,7 @@ export const updateSelectedPlpRefinements = (refinementId, isSelected) => async 
     let newPlpResults = await new Promise(fetchPlpResults(refinementIdsArr.join('+'), getState().plpSort, getState().plpItemsPerPage, getState().plpActivePageIndex));
 
     dispatch({
-        type: ACTION_TYPES.FETCH_PLP_RESULTS,
+        type: actionTypes.FETCH_PLP_RESULTS,
         payload: {...getState().plpResults, newPlpResults}
     });
 };
@@ -80,7 +48,7 @@ export const updateSelectedPlpSort = (selectedSort) => async (dispatch, getState
     let newPlpResults = await new Promise(fetchPlpResults(getState().plpRefinements, selectedSort, getState().plpItemsPerPage, getState().plpActivePageIndex));
 
     dispatch({
-        type: ACTION_TYPES.FETCH_PLP_RESULTS,
+        type: actionTypes.FETCH_PLP_RESULTS,
         payload: {...getState().plpResults, newPlpResults}
     });
 };
@@ -92,8 +60,18 @@ export const updateSelectedPlpPage = (selectedPageIndex) => async (dispatch, get
     let newPlpResults = await new Promise(fetchPlpResults(getState().plpRefinements, getState().plpSort, getState().plpItemsPerPage, selectedPageIndex));
 
     dispatch({
-        type: ACTION_TYPES.FETCH_PLP_RESULTS,
-        payload: {...getState().plpResults, newPlpResults}
+        type: actionTypes.FETCH_PLP_RESULTS,
+        payload: newPlpResults
+    });
+};
+
+export const fetchInitialPlpResults = () => async (dispatch, getState) => {
+    console.log('fetchInitialPlpResults');
+    let newPlpResults = await fetchPlpResults(getState().plpRefinements, getState().plpSort, getState().plpItemsPerPage, getState().plpPage);
+
+    dispatch({
+        type: actionTypes.FETCH_PLP_RESULTS,
+        payload: newPlpResults
     });
 };
 

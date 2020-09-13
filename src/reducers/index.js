@@ -1,6 +1,4 @@
 import { combineReducers } from 'redux';
-import facetsMenuIsOpenReducer from './facetsMenuIsOpenReducer';
-import mainMenuIsOpenReducer from './mainMenuIsOpenReducer';
 import plpItemsPerPageReducer from './plpItemsPerPageReducer';
 import plpPageReducer from './plpPageReducer';
 import plpRefinementsReducer from './plpRefinementsReducer';
@@ -11,8 +9,6 @@ import plpSortReducer from './plpSortReducer';
 
 // export all state values
 export default combineReducers({
-    facetsMenuIsOpen: facetsMenuIsOpenReducer,
-    mainMenuIsOpen: mainMenuIsOpenReducer,
     plpItemsPerPage: plpItemsPerPageReducer,
     plpPage: plpPageReducer,
     plpRefinements: plpRefinementsReducer,

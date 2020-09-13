@@ -1,5 +1,6 @@
 import './FacetsMenu.scss';
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
 import Facet from './Facet';
 
 const FacetsMenu = ({ facets, isOpen, onSelectionsChanged, onCloseClick }) => {
@@ -9,6 +10,10 @@ const FacetsMenu = ({ facets, isOpen, onSelectionsChanged, onCloseClick }) => {
         setIsApplyEnabled(false);
         onSelectionsChanged(paramToChange, changedParamValue, isSelected);
     };
+
+    if (!facets) {
+        return null;
+    }
 
     // render the facets list
     const renderedFacets = facets.map((facet) => {
@@ -46,6 +51,10 @@ const FacetsMenu = ({ facets, isOpen, onSelectionsChanged, onCloseClick }) => {
             </div>
         </div>
     );
-}
+};
 
-export default FacetsMenu;
+const mapStateToProps = (state) => {
+    return { facets: state.plpResults.facets}
+};
+
+export default connect(mapStateToProps)(FacetsMenu);

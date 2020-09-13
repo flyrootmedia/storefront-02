@@ -4,7 +4,7 @@ import React from 'react';
 const GlobalNavMenuItem = ( {item, onHeaderClick}) => {
     const menuLinks = item.links.map((link) => {
         return (
-            <li>
+            <li key={link.label}>
                 <a href={link.url}>{link.label}</a>
             </li>
         );

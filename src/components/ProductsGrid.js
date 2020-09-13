@@ -1,9 +1,14 @@
 import './ProductsGrid.scss'; 
 import React from 'react';
+import { connect } from 'react-redux';
 import ProductCard from './ProductCard';
 
 const ProductsGrid = ({ products }) => {
 
+    if (!products) {
+        return null;
+    }
+    
     const renderedProducts = products.map((product) => {
         return <ProductCard key={product.name} product={product} />
     });
@@ -14,5 +19,8 @@ const ProductsGrid = ({ products }) => {
         </div>
     );
 }
+const mapStateToProps = (state) => {
+    return { products: state.plpResults.products}
+};
 
-export default ProductsGrid;
+export default connect(mapStateToProps)(ProductsGrid);
