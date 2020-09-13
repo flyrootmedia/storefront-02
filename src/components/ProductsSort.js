@@ -1,11 +1,12 @@
 import './ProductsSort.scss';
 import React from 'react';
 import { connect } from 'react-redux';
+import { updateSelectedPlpSort } from '../actions';
 import StyledSelect from './StyledSelect';
 
-const ProductsSort = ({sortOptions, onSortChanged }) => {
+const ProductsSort = ({sortOptions, updateSelectedPlpSort }) => {
     const onSortChange = (event) => {
-        onSortChanged('sort', event.target.value, null);
+        updateSelectedPlpSort(event.target.value);
     };
 
     return (
@@ -27,4 +28,7 @@ const mapStateToProps = (state) => {
     }
 };
 
-export default connect(mapStateToProps)(ProductsSort);
+export default connect(
+    mapStateToProps,
+    { updateSelectedPlpSort }
+)(ProductsSort);

@@ -1,28 +1,6 @@
 import { actionTypes } from './types';
 import fetchPlpResults from './fetchPlpResults';
 
-export const updatePlpPage = (pageIndex) => {
-    return {
-        type: actionTypes.UPDATE_PLP_PAGE,
-        payload: pageIndex
-    };
-};
-
-export const updatePlpRefinements = (refinementsStr) => {
-    console.log('updatePlpRefinements', refinementsStr);
-    return {
-        type: actionTypes.UPDATE_PLP_REFINEMENTS,
-        payload: refinementsStr
-    };
-};
-
-export const updatePlpSort = (sort) => {
-    return {
-        type: actionTypes.UPDATE_PLP_SORT,
-        payload: sort
-    };
-};
-
 // facet selections changed
 export const updateSelectedPlpRefinements = (refinementId, isSelected) => async (dispatch, getState) => {
     const refinementIdsArr = getState().plpRefinements.split('+');
@@ -62,6 +40,11 @@ export const updateSelectedPlpSort = (selectedSort) => async (dispatch, getState
         type: actionTypes.FETCH_PLP_RESULTS,
         payload: newPlpResults
     });
+
+    dispatch({
+        type: actionTypes.UPDATE_PLP_SORT,
+        payload: selectedSort
+    });
 };
 
 // pagination changed
@@ -71,6 +54,11 @@ export const updateSelectedPlpPage = (selectedPageIndex) => async (dispatch, get
     dispatch({
         type: actionTypes.FETCH_PLP_RESULTS,
         payload: newPlpResults
+    });
+
+    dispatch({
+        type: actionTypes.UPDATE_PLP_PAGE,
+        payload: selectedPageIndex
     });
 };
 
